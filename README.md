@@ -44,4 +44,4 @@ I've had a website for 2018 now, they've all looked different and weren't necess
 
 # Start the project ! 🐳
 
-```docker-compose build && docker-compose --env-file ./backend/.env up```
+```docker-compose build && docker-compose up && npx prisma migrate dev --name "init"```
