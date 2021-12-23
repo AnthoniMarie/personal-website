@@ -6,6 +6,8 @@ services:
     build: './backend'
     ports:
       - '8080:8080'
+    links:
+      - redis
     restart: 'on-failure'
     environment:
       - DATABASE_URL=${DATABASE_URL}
@@ -25,7 +27,7 @@ services:
     ports:
       - '5432:5432'
   redis:
-    image: bitnami/redis:latest
+    image: redis:latest
     restart: always
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
