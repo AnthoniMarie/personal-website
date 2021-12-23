@@ -31,11 +31,9 @@ I've had a website for 2018 now, they've all looked different and weren't necess
 •	Javascript (React JS)<br>
 •	Database management system (MongoDB)
 
-# Requirement
+# What do you need to start the project ?
 
 •	Docker – Docker is a platform for developers and sysadmins to develop, deploy, and run application with containers. <br>
-
-•	MongoDB – MongoDB is an open-source document database and leading NoSQL database. <br>
 
 •	NPM – NPM is the package manager for JavaScript and the world’s largest software registry. <br>
 
