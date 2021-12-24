@@ -1,6 +1,6 @@
 import { Router } from 'express';
-const router = Router();
 import passport from 'passport'
+const router = Router();
 
 import {UserController} from '../controllers/users.controller';
 
@@ -14,8 +14,14 @@ export class UserRoutes {
     }
     routes() {
         /* auth */
-        this.router.post('/register', this.userController.createUser);
+        //this.router.post('/register', this.userController.createUser);
         this.router.get('/users/list', this.userController.listUsers);
+
+        this.router.get('/login', passport.authenticate('auth0', {scope: "openid email profile"}));
+        this.router.get('/redirect', passport.authenticate('auth0', {scope: "openid email profile"}), this.userController.redirectAuthentication);
+        this.router.get('/private', (err, user, info) => {
+            passport.authenticate("auth0");
+        });
     }
 }
 
