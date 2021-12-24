@@ -5,7 +5,7 @@ import bcrypt from 'bcrypt';
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
-export class UserController {
+export class AuthController {
     public async redirectAuthentication(req: Request, res: Response) {
         try {
             const user:any = req.user;
@@ -15,20 +15,10 @@ export class UserController {
                 }
                 console.log(user);
                 console.log(req.session);
-                res.redirect("/");
+                res.redirect("/");//todo: check for this redirection, seem to be not correct
             });
             //console.log(res);
             //return (res.sendStatus(httpStatus.OK).json("OK"));
-        } catch (error: any) {
-            console.log(error);
-            return (res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR));
-        }
-    }
-
-    public async listUsers(req: Request, res: Response) {
-        try {
-            const users_list = await prisma.user.findMany();
-            return (res.status(httpStatus.OK).json({message: 'All users list.', users: users_list}));
         } catch (error: any) {
             console.log(error);
             return (res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR));

@@ -14,7 +14,9 @@ const PORT = 8080;
 
 import {REDIS_HOST, REDIS_PORT, REDIS_SESSION_SECRET} from "./constants/redis.constants";
 import {SESSION_SECRET} from "./constants/auth0.constants";
-import { UserRoutes } from './routes/users.routes';
+import { AuthRoutes } from './routes/auth.routes';
+import { ArticleRoutes } from './routes/article.routes';
+
 import "./passport";
 
 (async () => {
@@ -54,7 +56,8 @@ import "./passport";
 
     /* Server routes */
     app.get('/', (req, res) => res.send('Welcome to the personal API of Anthoni Marie '));
-    app.use('/auth', new UserRoutes().router);
+    app.use('/auth', new AuthRoutes().router);
+    app.use('/articles', new ArticleRoutes().router);
     app.listen(PORT, () => {
         console.log(`⚡️[ANTHONIMARIE]: API is running at http://127.0.0.1:${PORT}`);
     });

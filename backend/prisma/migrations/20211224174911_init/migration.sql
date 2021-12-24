@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "Articles" (
+CREATE TABLE "Article" (
     "id" SERIAL NOT NULL,
     "title" TEXT,
     "description" TEXT,
@@ -9,11 +9,11 @@ CREATE TABLE "Articles" (
     "published" BOOLEAN NOT NULL DEFAULT false,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    CONSTRAINT "Articles_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Article_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
-CREATE TABLE "Projects" (
+CREATE TABLE "Project" (
     "id" SERIAL NOT NULL,
     "name" TEXT,
     "location" TEXT,
@@ -22,5 +22,5 @@ CREATE TABLE "Projects" (
     "content" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    CONSTRAINT "Projects_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Project_pkey" PRIMARY KEY ("id")
 );

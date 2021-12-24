@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/AnthoniMarie/personal-website#readme",
   "dependencies": {
-    "@prisma/client": "^3.6.0",
+    "@prisma/client": "^3.7.0",
     "@types/dotenv": "^8.2.0",
     "bcrypt": "^5.0.1",
     "connect-redis": "^6.0.0",
@@ -41,7 +41,7 @@
     "@types/express-session": "^1.17.2",
     "@types/node": "^16.11.9",
     "@types/passport": "^1.0.7",
-    "prisma": "^3.6.0",
+    "prisma": "^3.7.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
   }
