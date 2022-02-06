@@ -283,7 +283,7 @@ const NAV_ITEMS: Array<NavItem> = [
     },
     {
         label: 'Blog',
-        href: '#',
+        href: '/blog',
     },
     {
         label: 'Get in touch',
