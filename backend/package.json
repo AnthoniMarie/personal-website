@@ -1,5 +1,5 @@
 {
-  "name": "personal-website",
+  "name": "personal-website_backend",
   "version": "1.0.0",
   "description": "Backend for my personal website.",
   "main": "src/index.ts",
