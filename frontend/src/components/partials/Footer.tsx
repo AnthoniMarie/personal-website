@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { SimpleLogo } from "../branding/SimpleLogo"
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { ColorModeSwitcher } from "../../ColorModeSwitcher"
 import { ReactNode } from 'react';
 
 const SocialButton = ({
@@ -82,6 +83,7 @@ export default function Footer() {
                             <FaInstagram />
                         </SocialButton>
                     </Stack>
+                    <ColorModeSwitcher justifySelf="flex-end" />
                 </Container>
             </Box>
         </Box>

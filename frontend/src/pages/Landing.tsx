@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react"
 import { Search2Icon } from '@chakra-ui/icons'
 
-import { ColorModeSwitcher } from "../ColorModeSwitcher"
 import { AnimatedLogo } from "../components/branding/AnimatedLogo"
 import Navbar from "../components/partials/Navbar"
 import Footer from "../components/partials/Footer"
