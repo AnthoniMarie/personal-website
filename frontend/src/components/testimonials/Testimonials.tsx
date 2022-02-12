@@ -10,6 +10,9 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react';
 
+import boulistenaute from "../../assets/images/testimonials/boulistenaute.png"
+import sonoscanner from "../../assets/images/testimonials/sonoscanner.png"
+
 const Testimonial = ({ children }: { children: ReactNode }) => {
     return <Box>{children}</Box>;
 };
@@ -98,34 +101,28 @@ export default function Testimonials() {
                     spacing={{ base: 10, md: 4, lg: 10 }}>
                     <Testimonial>
                         <TestimonialContent>
-                            <TestimonialHeading>Top !</TestimonialHeading>
+                            <TestimonialHeading>Un jeune développeur à qui vous pouvez faire entièrement confiance !</TestimonialHeading>
                             <TestimonialText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                                neque sed imperdiet nibh lectus feugiat nunc sem.
+                                Encore merci à Anthoni de m’avoir assisté dans cette mission ! Ce jeune développeur montre déjà de belles qualités !!
                             </TestimonialText>
                         </TestimonialContent>
                         <TestimonialAvatar
-                            src={
-                                'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-                            }
-                            name={'xx'}
-                            title={'Société'}
+                            src={boulistenaute}
+                            name={'Lionel Zanet (Google)'}
+                            title={'Boulistenaute'}
                         />
                     </Testimonial>
                     <Testimonial>
                         <TestimonialContent>
                             <TestimonialHeading>Merci à Anthoni</TestimonialHeading>
                             <TestimonialText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                                neque sed imperdiet nibh lectus feugiat nunc sem.
+                                Quelqu'un sur lequel on peut compter, ce qui est devenu une valeur rare!
                             </TestimonialText>
                         </TestimonialContent>
                         <TestimonialAvatar
-                            src={
-                                'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-                            }
-                            name={'xx'}
-                            title={'Société'}
+                            src={sonoscanner}
+                            name={'Directeur des opérations'}
+                            title={'Sonoscanner'}
                         />
                     </Testimonial>
                     <Testimonial>
