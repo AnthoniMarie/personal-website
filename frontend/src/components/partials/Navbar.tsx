@@ -24,6 +24,7 @@ import {
 } from '@chakra-ui/icons';
 import { SimpleLogo } from "../branding/SimpleLogo"
 import * as React from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
@@ -60,8 +61,8 @@ export default function Navbar() {
                         color={useColorModeValue('gray.800', 'white')}>
                     </Text>
                     <Flex style={{flexDirection:'row', alignItems:'center'}}>
-                        <SimpleLogo h="4vmin" />
-                        <Text fontSize="lg" fontWeight={500}>nthoni Marie</Text>
+                        <SimpleLogo h="3vmin" />
+                        <Text fontSize="lg" fontWeight={500}>&nbsp;nthoni Marie</Text>
                     </Flex>
 
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -87,9 +88,9 @@ export default function Navbar() {
                         fontSize={'sm'}
                         fontWeight={600}
                         color={'white'}
-                        bg={'pink.400'}
+                        bg={'#de8814'}
                         _hover={{
-                            bg: 'pink.300',
+                            bg: '#ff9100',
                         }}>
                         Sign Up
                     </Button>
@@ -104,6 +105,7 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
+    const navigate = useNavigate();
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
@@ -117,7 +119,8 @@ const DesktopNav = () => {
                         <PopoverTrigger>
                             <Link
                                 p={2}
-                                href={navItem.href ?? '#'}
+                                onClick={() => { // @ts-ignore
+                                    navigate(navItem.href)}}
                                 fontSize={'sm'}
                                 fontWeight={500}
                                 color={linkColor}
@@ -264,7 +267,7 @@ const NAV_ITEMS: Array<NavItem> = [
     },
     {
         label: 'Why me ?',
-        href: '#',
+        href: '/about',
     },
     {
         label: 'Projects',

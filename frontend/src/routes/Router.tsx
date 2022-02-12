@@ -9,12 +9,14 @@ import {
     Route,
 } from "react-router-dom";
 import Landing from "../pages/Landing";
+import About from "../pages/About";
 import Blog from "../pages/Blog";
 
 export const Router = () => (
     <BrowserRouter>
         <Routes>
             <Route path={"/"} element={<Landing/>}/>
+            <Route path={"/about"} element={<About/>}/>
             <Route path={"/blog"} element={<Blog/>}/>
         </Routes>
     </BrowserRouter>
