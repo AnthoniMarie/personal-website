@@ -67,7 +67,7 @@ const Blog = () => {
         <Navbar/>
             <Container maxW={'7xl'} p="12">
                     <Heading as="h2" marginTop="5">
-                        Latest articles
+                        Derniers articles
                     </Heading>
                     <Divider marginTop="5" />
                     <Wrap spacing="30px" marginTop="5">
@@ -93,7 +93,7 @@ const Blog = () => {
                                 <BlogTags tags={['tag1', 'tag2']} marginTop="3" />
                                 <Heading fontSize="xl" marginTop="2">
                                     <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                                        Title
+                                        Titre.
                                     </Link>
                                 </Heading>
                                 <Text as="p" fontSize="md" marginTop="2">

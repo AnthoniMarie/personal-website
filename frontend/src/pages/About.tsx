@@ -9,21 +9,24 @@ import {
     StackDivider,
     Icon,
     chakra,
-    useColorModeValue, Stat, StatLabel, Box, StatNumber,
+    useColorModeValue, Stat, StatLabel, Box, StatNumber, background, Center, Button,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import {
-    BiStats,
-    BiUserPlus,
-    BiWorld,
-} from 'react-icons/bi';
-import { BsPerson } from 'react-icons/bs';
-import { FiServer } from 'react-icons/fi';
-import { GoLocation } from 'react-icons/go';
+    FiCode,
+    FiHelpCircle,
+    FiStar,
+} from 'react-icons/fi';
+import {FcGlobe, FcConferenceCall, FcFolder, FcGraduationCap, FcFlashOn} from "react-icons/fc";
 import { ReactElement } from 'react';
 import Navbar from "../components/partials/Navbar";
 import * as React from "react";
 import Footer from "../components/partials/Footer";
+import { AnimatedLogo } from "../components/branding/AnimatedLogo"
+import Testimonials from "../components/testimonials/Testimonials";
+
+import anthonimarie_profilepic from "../assets/images/anthonimarie_profilepic.jpg"
+import {useNavigate} from "react-router-dom";
 
 interface StatsCardProps {
     title: string;
@@ -85,35 +88,20 @@ const Feature = ({ text, icon, iconBg }: FeatureProps) => {
 };
 
 export default function About() {
+    const navigate = useNavigate();
     return (
         <>
             <Navbar/>
             <Container maxW={'5xl'} py={12}>
                 <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
+                    <Center><AnimatedLogo h="10vmin" pointerEvents="none" /></Center>
                     <chakra.h1
                         textAlign={'center'}
                         fontSize={'4xl'}
                         py={10}
                         fontWeight={'bold'}>
-                        Hi, I Am Anthoni Marie !
+                        Bonjour, je suis Anthoni Marie !
                     </chakra.h1>
-                    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
-                        <StatsCard
-                            title={'Users'}
-                            stat={'5,000'}
-                            icon={<BsPerson size={'3em'} />}
-                        />
-                        <StatsCard
-                            title={'Servers'}
-                            stat={'1,000'}
-                            icon={<FiServer size={'3em'} />}
-                        />
-                        <StatsCard
-                            title={'Datacenters'}
-                            stat={'7'}
-                            icon={<GoLocation size={'3em'} />}
-                        />
-                    </SimpleGrid>
                 </Box>
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
                     <Stack spacing={4}>
@@ -126,13 +114,33 @@ export default function About() {
                             p={2}
                             alignSelf={'flex-start'}
                             rounded={'md'}>
-                            Our Story
+                            Qui suis-je ?
                         </Text>
-                        <Heading>A digital Product design agency</Heading>
-                        <Text color={'gray.500'} fontSize={'lg'}>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                            nonumy eirmod tempor invidunt ut labore
-                        </Text>
+                        <Heading>Développeur web et étudiant à Epitech</Heading>
+                        <Feature
+                            icon={
+                                <Icon as={FiCode} color={'yellow.500'} w={5} h={5} />
+                            }
+                            iconBg={useColorModeValue('yellow.100', 'yellow.900')}
+                            text={'Développement Fullstack'}
+                        />
+                        <Feature
+                            icon={<Icon as={FiHelpCircle} color={'green.500'} w={5} h={5} />}
+                            iconBg={useColorModeValue('green.100', 'green.900')}
+                            text={'Dépannage informatique'}
+                        />
+                        <Feature
+                            icon={
+                                <Icon as={FiStar} color={'purple.500'} w={5} h={5} />
+                            }
+                            iconBg={useColorModeValue('purple.100', 'purple.900')}
+                            text={'Conseil informatique'}
+                        />
+                            <Text>Je m'appelle Anthoni, j'ai actuellement 21 ans et je vis sur Paris. Autodidacte passionné par le domaine de l'informatique et du web depuis maintenant plus de 5 ans, je suis capable de développer un site internet complet (dans la limitation de mes connaissances) avec l'aide d'un cahier des charges.</Text>
+                            <Text>Pour me perfectionner dans le domaine je participe à l'élaboration de plusieurs projets. Ces différents projets que j'ai pu commencer pour le premier très jeune, m'ont permis d'évoluer d'années en années et d'acquérir de nombreuses connaissances à travers le travail en équipe.</Text>
+                            <Text>Les parties que j'aime le plus dans l'informatique sont celles de la sécurité, le développement (d'infrastructures, d'applications et de sites internet).</Text>
+                            <Text>L'informatique est ce qui me passionne le plus, dès que je peux faire quelque chose avec une équipe je le fais afin de satisfaire d'éventuels clients et d'en apprendre plus sur ce que je pratique.</Text>
+                            <Text>Afin de m'aider à financer mes projets et le bon fonctionnement de mon site internet n'hésitez pas à m'aider par le biais de donations :) je vous remercie infiniment d'avance.</Text>
                         <Stack
                             spacing={4}
                             divider={
@@ -140,34 +148,13 @@ export default function About() {
                                     borderColor={useColorModeValue('gray.100', 'gray.700')}
                                 />
                             }>
-                            <Feature
-                                icon={
-                                    <Icon as={BiStats} color={'yellow.500'} w={5} h={5} />
-                                }
-                                iconBg={useColorModeValue('yellow.100', 'yellow.900')}
-                                text={'Business Planning'}
-                            />
-                            <Feature
-                                icon={<Icon as={BiWorld} color={'green.500'} w={5} h={5} />}
-                                iconBg={useColorModeValue('green.100', 'green.900')}
-                                text={'Financial Planning'}
-                            />
-                            <Feature
-                                icon={
-                                    <Icon as={BiUserPlus} color={'purple.500'} w={5} h={5} />
-                                }
-                                iconBg={useColorModeValue('purple.100', 'purple.900')}
-                                text={'Market Analysis'}
-                            />
                         </Stack>
                     </Stack>
                     <Flex>
                         <Image
                             rounded={'md'}
                             alt={'feature image'}
-                            src={
-                                'https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-                            }
+                            src={anthonimarie_profilepic}
                             objectFit={'cover'}
                         />
                     </Flex>
@@ -178,27 +165,47 @@ export default function About() {
                         fontSize={'4xl'}
                         py={7}
                         fontWeight={'bold'}>
-                        Les chiffres
+                        Quelques chiffres
                     </chakra.h1>
-                    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
+                    <SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 5, lg: 8 }}>
                         <StatsCard
-                            title={'Users'}
-                            stat={'5,000'}
-                            icon={<BsPerson size={'3em'} />}
+                            title={'Projets'}
+                            stat={'42'}
+                            icon={<FcFolder size={'3em'} />}
                         />
                         <StatsCard
-                            title={'Servers'}
-                            stat={'1,000'}
-                            icon={<FiServer size={'3em'} />}
+                            title={'Clients'}
+                            stat={'42'}
+                            icon={<FcConferenceCall size={'3em'} />}
                         />
                         <StatsCard
-                            title={'Datacenters'}
-                            stat={'7'}
-                            icon={<GoLocation size={'3em'} />}
+                            title={'Visites uniques'}
+                            stat={'42'}
+                            icon={<FcGlobe size={'3em'} />}
+                        />
+                        <StatsCard
+                            title={'Thèmes de travail'}
+                            stat={'42'}
+                            icon={<FcGraduationCap size={'3em'} />}
                         />
                     </SimpleGrid>
                 </Box>
+                <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
+                    <chakra.h1
+                        textAlign={'center'}
+                        fontSize={'4xl'}
+                        py={7}
+                        fontWeight={'bold'}>
+                        Mon travail
+                    </chakra.h1>
+                    <Center>
+                        <Button rightIcon={<FcFlashOn />} backgroundColor='#de8814' variant='solid' onClick={() => {navigate('/contact')}}>
+                            Liste de mes projets
+                        </Button>
+                    </Center>
+                </Box>
             </Container>
+            <Testimonials/>
             <Footer/>
             </>
     );

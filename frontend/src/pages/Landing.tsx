@@ -54,12 +54,12 @@ export default function Landing() {
                         <TypeAnimation
                             cursor={true}
                             sequence={[
-                                'Your IT projects,',
+                                'Donnez vie à votre projets IT',
                                 2000,
-                                'as you never seen before.',
+                                'rapidement et simplement.',
                                 2000,
                             ]}
-                            wrapper="h2"
+                            wrapper="strong"
                             repeat={Infinity}
                         />
                     </Text>
@@ -67,7 +67,7 @@ export default function Landing() {
                            alignSelf={'center'}
                            position={'relative'}>
                         <Button leftIcon={<Search2Icon/>} backgroundColor='#de8814' variant='solid' onClick={() => {navigate('/blog')}}>
-                            Discover
+                            Découvrir
                         </Button>
                     </Stack>
                 </Stack>

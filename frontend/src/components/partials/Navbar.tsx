@@ -81,7 +81,7 @@ export default function Navbar() {
                         fontWeight={400}
                         variant={'link'}
                         href={'#'}>
-                        Sign In
+                        Espace
                     </Button>
                     <Button
                         display={{ base: 'none', md: 'inline-flex' }}
@@ -92,7 +92,7 @@ export default function Navbar() {
                         _hover={{
                             bg: '#ff9100',
                         }}>
-                        Sign Up
+                        Proposer un projet
                     </Button>
                 </Stack>
             </Flex>
@@ -157,9 +157,11 @@ const DesktopNav = () => {
 };
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+    const navigate = useNavigate();
     return (
         <Link
-            href={href}
+            onClick={() => { // @ts-ignore
+                navigate(href)}}
             role={'group'}
             display={'block'}
             p={2}
@@ -204,6 +206,7 @@ const MobileNav = () => {
 };
 
 const MobileNavItem = ({ label, children, href }: NavItem) => {
+    const navigate = useNavigate();
     const { isOpen, onToggle } = useDisclosure();
 
     return (
@@ -211,7 +214,8 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
             <Flex
                 py={2}
                 as={Link}
-                href={href ?? '#'}
+                onClick={() => { // @ts-ignore
+                    navigate(href)}}
                 justify={'space-between'}
                 align={'center'}
                 _hover={{
@@ -266,20 +270,20 @@ const NAV_ITEMS: Array<NavItem> = [
         href: '#',
     },
     {
-        label: 'Why me ?',
+        label: 'Qui suis-je ?',
         href: '/about',
     },
     {
-        label: 'Projects',
+        label: 'Projets',
         children: [
             {
-                label: 'Best projects',
-                subLabel: 'Projects that I am really proud of',
+                label: 'Meilleurs projects',
+                subLabel: 'Les projets dont je suis le plus fier.',
                 href: '#',
             },
             {
-                label: 'All my projects',
-                subLabel: 'All projects which I have worked on',
+                label: 'Tous mes projets',
+                subLabel: "Liste de tous les projets sur lesquels j'ai pu travailler",
                 href: '#',
             },
         ],
@@ -289,7 +293,7 @@ const NAV_ITEMS: Array<NavItem> = [
         href: '/blog',
     },
     {
-        label: 'Get in touch',
+        label: 'Me contacter',
         href: '#',
     }
 ];
