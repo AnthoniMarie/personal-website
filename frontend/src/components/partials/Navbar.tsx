@@ -31,7 +31,7 @@ export default function Navbar() {
 
     return (
         <Box>
-            <Flex
+            <Flex style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: 'rgb(246, 147, 14)', padding: '1px'}}
                 bg={useColorModeValue('white', 'gray.800')}
                 color={useColorModeValue('gray.600', 'white')}
                 minH={'60px'}

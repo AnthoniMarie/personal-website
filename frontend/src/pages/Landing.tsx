@@ -18,10 +18,27 @@ import Footer from "../components/partials/Footer"
 
 import biarritzVideo from "../assets/videos/biarritz.mp4"
 import { useNavigate } from "react-router-dom";
+import Granim from "granim";
+import {useEffect} from "react";
 
 export default function Landing() {
     const navigate = useNavigate();
-
+    useEffect(() => {
+        new Granim({
+            element: '#canvas-basic',
+            direction: 'top-bottom',
+            isPausedWhenNotInView: true,
+            states: {
+                "default-state": {
+                    gradients: [
+                        ['#ff9966', '#cc9735'],
+                        ['#dd9505', '#ada79a'],
+                        ['#e66829', '#f05053']
+                    ]
+                }
+            }
+        });
+    }, []);
     return (
     <>
         <Navbar/>
@@ -30,21 +47,23 @@ export default function Landing() {
             textAlign="center"
             w={'full'}
             h={'100vh'}
-            backgroundImage={
-                'url(https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)'
-            }
-            backgroundSize={'cover'}
-            backgroundPosition={'center center'}>
+            >
             {/*<video loop autoPlay muted style={{position: 'absolute', right: 'O', minWidth: '100%', minHeight: '100%'}}>
                 <source src={biarritzVideo}/>
                 Your browser does not support the video tag.
             </video>*/}
+
             <VStack
                 w={'full'}
                 justify={'center'}
                 px={useBreakpointValue({base: 4, md: 8})}
                 bgGradient={'linear(to-r, blackAlpha.600, transparent)'}>
-
+                <canvas id="canvas-basic" style={{position: 'absolute',
+                    display: 'block',
+                    zIndex:'-1',
+                    width: '100%',
+                    height: '100%'}}
+                />
                 <Stack maxW={'2xl'} align={'flex-start'} spacing={6}>
                     <Text
                         color={'white'}
