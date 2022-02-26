@@ -7,12 +7,12 @@ import {
     VStack,
     Code,
     Grid,
-    theme, Button, useBreakpointValue, Stack, Flex, position,
+    theme, Button, useBreakpointValue, Stack, Flex, position, Center,
 } from "@chakra-ui/react"
 import { Search2Icon } from '@chakra-ui/icons'
 import TypeAnimation from 'react-type-animation';
 
-import { AnimatedLogo } from "../components/branding/AnimatedLogo"
+import { SimpleLogo } from "../components/branding/SimpleLogo"
 import Navbar from "../components/partials/Navbar"
 import Footer from "../components/partials/Footer"
 
@@ -42,7 +42,6 @@ export default function Landing() {
     return (
     <>
         <Navbar/>
-
         <Flex
             textAlign="center"
             w={'full'}
@@ -52,7 +51,6 @@ export default function Landing() {
                 <source src={biarritzVideo}/>
                 Your browser does not support the video tag.
             </video>*/}
-
             <VStack
                 w={'full'}
                 justify={'center'}
@@ -64,12 +62,13 @@ export default function Landing() {
                     width: '100%',
                     height: '100%'}}
                 />
+                <Center><SimpleLogo h="15vmin" pointerEvents="none" /></Center>
                 <Stack maxW={'2xl'} align={'flex-start'} spacing={6}>
                     <Text
                         color={'white'}
                         fontWeight={700}
                         lineHeight={1.2}
-                        fontSize={useBreakpointValue({base: '3xl', md: '4xl'})}>
+                        fontSize={useBreakpointValue({base: '4xl', md: '5xl'})}>
                         <TypeAnimation
                             cursor={true}
                             sequence={[
