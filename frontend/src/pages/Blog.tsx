@@ -14,17 +14,18 @@ import Navbar from "../components/partials/Navbar"
 import Footer from "../components/partials/Footer"
 import IndividualBlog from "../components/blog/list/IndividualBlog";
 
+import {API_URL} from "../constants/misc";
+
 const Blog = () => {
         const [blogs, setBlogs] = useState([]);
         const [isLoading, setIsLoading] = useState(true);
         const [isError, setIsError] = useState(false);
         const fetchData = () => {
-            fetch('http://localhost:1337/api/blogs?populate=*')
+            fetch(API_URL + '/api/blogs?populate=*')
                 .then((response) => response.json())
                 .then((data) => {
                     setIsLoading(false);
                     setBlogs(data.data);
-                    //console.log(JSON.stringify(data.data[0].attributes.title));
                 })
                 .catch((error) => {
                     setIsLoading(false);
