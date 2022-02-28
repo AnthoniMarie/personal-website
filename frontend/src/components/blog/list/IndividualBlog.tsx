@@ -64,14 +64,12 @@ const IndividualBlog = ({data}) => {
             <Box w="100%">
                 <Box borderRadius="lg" overflow="hidden">
                     <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                        <Image
+                        <Image style={{aspectRatio: '3/2'}}
                             transform="scale(1.0)"
                             src={
 
                                 API_URL + item.attributes.banner.data.attributes.formats.large.url
                             }
-                            alt="some text"
-                            objectFit="contain"
                             width="100%"
                             transition="0.3s ease-in-out"
                             _hover={{
