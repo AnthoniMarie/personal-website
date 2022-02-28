@@ -28,7 +28,7 @@ const Blog = () => {
                     setBlogs(data.data);
                 })
                 .catch((error) => {
-                    setIsLoading(false);
+                    //setIsLoading(false);
                     setIsError(true);
                     console.log(error);
                 });
@@ -36,8 +36,16 @@ const Blog = () => {
         useEffect(() => {
             fetchData();
         }, []);
-        if (isLoading)
-            return <div>Loading...</div>;
+        const LoadBlogs = () => {
+            if (isLoading)
+                return (<div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '30vh'}}><AnimatedLogo h="10vmin" pointerEvents="none"/></div>)
+            else
+                return (
+                    <Wrap spacing="30px" marginTop="5">
+                        {blogs && <IndividualBlog data={blogs}/>}
+                    </Wrap>
+                )
+        }
     return (
         <>
         <Navbar/>
@@ -46,9 +54,7 @@ const Blog = () => {
                         Derniers articles
                     </Heading>
                     <Divider marginTop="5" />
-                    <Wrap spacing="30px" marginTop="5">
-                        {blogs && <IndividualBlog data={blogs}/>}
-                    </Wrap>
+                    <LoadBlogs/>
                 </Container>
         <Footer/>
         </>
