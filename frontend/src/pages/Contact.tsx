@@ -17,7 +17,7 @@ import {
     Input,
     InputGroup,
     InputLeftElement,
-    Textarea, Grid, GridItem, chakra,
+    Textarea, Grid, GridItem, chakra, Center,
 } from '@chakra-ui/react';
 import Navbar from "../components/partials/Navbar"
 import Footer from "../components/partials/Footer"
@@ -34,7 +34,7 @@ export default function Contact() {
     return (
         <>
         <Navbar/>
-            <Container maxW="full" p={0} centerContent overflow="hidden" >
+            <Container maxW="full" p={0} overflow="hidden">
                 <Grid
                       p={{ sm: 5, md: 5, lg: 16 }}
                       alignItems="center"
@@ -48,33 +48,31 @@ export default function Contact() {
                         md: 'repeat(2, 1fr)',
                     }}
                     gap={4}>
+                    <Center>
                     <GridItem colSpan={1}>
                         <VStack alignItems="flex-start" spacing="20px">
                             <chakra.h2 fontSize="3xl" fontWeight="700">
-                                Medium length title
+                                Voyez les choses en grand.
                             </chakra.h2>
-                            <Button colorScheme="green" size="md">
-                                Call To Action
+                            <Button colorScheme="blackAlpha" size="md">
+                                Me contacter
                             </Button>
                         </VStack>
                     </GridItem>
+                    </Center>
                     <GridItem>
                         <Flex>
                             <chakra.p>
-                                Provide your customers a story they would enjoy keeping in mind
-                                the objectives of your website. Pay special attention to the tone
-                                of voice.
+                                Parce que réaliser un projet n'est pas une mince affaire...
                             </chakra.p>
                         </Flex>
                     </GridItem>
                 </Grid>
                 <Flex>
-                    <Box
-                        bg="#02054B"
+                    <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}
                         color="white"
                         borderRadius="lg"
-                        m={{ sm: 4, md: 16, lg: 10 }}
-                        p={{ sm: 5, md: 5, lg: 16 }}>
+                    >
                         <Box p={4}>
                             <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
                                 <WrapItem>
