@@ -17,6 +17,7 @@ import {
 } from '@chakra-ui/react';
 
 import {API_URL} from "../../../constants/misc";
+import Article from "../../../pages/blog/Article";
 
 
 interface IBlogTags {
@@ -56,14 +57,16 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
     );
 };
 
-const IndividualBlog = ({data}) => {
+const Card = ({data}) => {
+    console.log(data);
     return (
         <>
             {data && data.map((item, index) =>
             <WrapItem key={index} width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
             <Box w="100%">
                 <Box borderRadius="lg" overflow="hidden">
-                    <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+
+                    <Link href={"/blog/" + item.attributes.slug} textDecoration="none" _hover={{ textDecoration: 'none' }}>
                         <Image style={{aspectRatio: '3/2'}}
                             transform="scale(1.0)"
                             src={
@@ -98,4 +101,4 @@ const IndividualBlog = ({data}) => {
     );
 }
 
-export default IndividualBlog;
+export default Card;

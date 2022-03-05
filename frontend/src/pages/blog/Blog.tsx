@@ -8,13 +8,13 @@ import {
 } from '@chakra-ui/react';
 import {useEffect, useState} from "react";
 
-import { ColorModeSwitcher } from "../ColorModeSwitcher"
-import { AnimatedLogo } from "../components/branding/AnimatedLogo"
-import Navbar from "../components/partials/Navbar"
-import Footer from "../components/partials/Footer"
-import IndividualBlog from "../components/blog/list/IndividualBlog";
+import { ColorModeSwitcher } from "../../ColorModeSwitcher"
+import { AnimatedLogo } from "../../components/branding/AnimatedLogo"
+import Navbar from "../../components/partials/Navbar"
+import Footer from "../../components/partials/Footer"
+import Card from "../../components/blog/list/Card";
 
-import {API_URL} from "../constants/misc";
+import {API_URL} from "../../constants/misc";
 
 const Blog = () => {
         const [blogs, setBlogs] = useState([]);
@@ -42,7 +42,7 @@ const Blog = () => {
             else
                 return (
                     <Wrap spacing="30px" marginTop="5">
-                        {blogs && <IndividualBlog data={blogs}/>}
+                        {blogs && <Card data={blogs}/>}
                     </Wrap>
                 )
         }

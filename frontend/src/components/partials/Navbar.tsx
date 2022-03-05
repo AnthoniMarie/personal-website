@@ -111,9 +111,8 @@ const DesktopNav = () => {
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
     return (
-        <Stack direction={'row'} spacing={4}>
+        <Stack direction={'row'} spacing={4} style={{flexDirection:'row', alignItems:'center'}}>
             {NAV_ITEMS.map((navItem) => (
-                <Center>
                 <Box key={navItem.label}>
                     <Popover trigger={'hover'} placement={'bottom-start'}>
                         <PopoverTrigger>
@@ -149,7 +148,6 @@ const DesktopNav = () => {
                         )}
                     </Popover>
                 </Box>
-                </Center>
 
             ))}
         </Stack>
