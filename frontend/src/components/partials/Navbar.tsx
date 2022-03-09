@@ -64,6 +64,8 @@ export default function Navbar() {
                         <SimpleLogo h="3vmin" />
                         <Text fontSize="lg" fontWeight={500}>&nbsp;nthoni Marie</Text>
                     </Flex>
+                </Flex>
+                <Flex flex={{ base: 7 }} justify={{ base: 'center' }}>
 
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
                         <DesktopNav />
