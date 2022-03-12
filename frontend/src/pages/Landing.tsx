@@ -16,10 +16,11 @@ import { SimpleLogo } from "../components/branding/SimpleLogo"
 import Navbar from "../components/partials/Navbar"
 import Footer from "../components/partials/Footer"
 
-import biarritzVideo from "../assets/videos/biarritz.mp4"
 import { useNavigate } from "react-router-dom";
 import Granim from "granim";
 import {useEffect} from "react";
+
+import Particles from "react-tsparticles";
 
 export default function Landing() {
     const navigate = useNavigate();
@@ -47,10 +48,6 @@ export default function Landing() {
             w={'full'}
             h={'100vh'}
             >
-            {/*<video loop autoPlay muted style={{position: 'absolute', right: 'O', minWidth: '100%', minHeight: '100%'}}>
-                <source src={biarritzVideo}/>
-                Your browser does not support the video tag.
-            </video>*/}
             <VStack
                 w={'full'}
                 justify={'center'}
@@ -61,6 +58,65 @@ export default function Landing() {
                     zIndex:'-1',
                     width: '100%',
                     height: '100%'}}
+                />
+                <Particles
+                    id="tsparticles"
+                    options={{
+                        fpsLimit: 30,
+                        interactivity: {
+                            events: {
+                                onClick: { enable: true, mode: "push" },
+                                onHover: {
+                                    enable: true,
+                                    mode: "repulse",
+                                    parallax: { enable: false, force: 60, smooth: 10 }
+                                },
+                                resize: true
+                            },
+                            modes: {
+                                push: { quantity: 4 },
+                                repulse: { distance: 200, duration: 0.4 }
+                            }
+                        },
+                        particles: {
+                            color: { value: "#ffffff" },
+                            move: {
+                                direction: "none",
+                                enable: true,
+                                outModes: "out",
+                                random: false,
+                                speed: 1,
+                                straight: false
+                            },
+                            number: {
+                                density: {
+                                    enable: true,
+                                    area: 200
+                                },
+                                value: 20
+                            },
+                            opacity: {
+                                animation: {
+                                    enable: true,
+                                    speed: 0.05,
+                                    sync: true,
+                                    startValue: "max",
+                                    count: 1,
+                                    destroy: "min"
+                                },
+                                value: {
+                                    min: 0,
+                                    max: 0.5
+                                }
+                            },
+                            shape: {
+                                type: "circle"
+                            },
+                            size: {
+                                value: { min: 1, max: 5 }
+                            }
+                        }
+                }}
                 />
                 <Center><SimpleLogo h="15vmin" pointerEvents="none" /></Center>
                 <Stack maxW={'2xl'} align={'flex-start'} spacing={6}>
