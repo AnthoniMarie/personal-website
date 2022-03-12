@@ -8,7 +8,7 @@
 <br />
 <p align="center">
   <a href="https://anthoni-marie.fr">
-    <img src="https://s.anthoni-marie.fr/m_w/2021/img/logo-black.png" alt="Logo" width="80" height="80">
+    <img src="https://s.anthoni-marie.fr/m_w/2021/img/logo-black.png" alt="AnimatedLogo" width="80" height="80">
   </a>
 
 <h3 align="center">My personal website</h3>
@@ -25,11 +25,10 @@
 I've had a website for 2018 now, they've all looked different and weren't necessarily all very well done. So I decided, with my latest web skills acquired lately, to re-develop my website :)
 # Languages & Technologies used
 
-•	Node.js (Express.js)<br>
+•	Node.js (Strapi)<br>
 •	HTML<br>
 •	CSS<br>
 •	Javascript (React JS)<br>
-•	Database management system (MongoDB)
 
 # What do you need to start the project ?
 
