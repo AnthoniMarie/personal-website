@@ -5,6 +5,7 @@ import {
     Link,
     Stack,
     Text,
+    Image,
     useColorModeValue,
     VisuallyHidden,
 } from '@chakra-ui/react';
@@ -12,6 +13,8 @@ import { SimpleLogo } from "../branding/SimpleLogo"
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { ColorModeSwitcher } from "../../ColorModeSwitcher"
 import { ReactNode } from 'react';
+import phoneinformations_whitebg from "../../assets/images/contact/6_whitebg.png";
+import phoneinformations_defaultbg from "../../assets/images/contact/6.png";
 
 const SocialButton = ({
                           children,
@@ -49,22 +52,32 @@ export default function Footer() {
         <Box
             bg={useColorModeValue('gray.50', 'gray.900')}
             color={useColorModeValue('gray.700', 'gray.200')}>
-            <Container
-                as={Stack}
-                maxW={'6xl'}
-                py={4}
-                spacing={4}
-                justify={'center'}
-                align={'center'}>
-                <SimpleLogo h="30" />
-                <Text>L'informatique au service des autres.</Text>
-                <Text fontSize={'xs'}>99 Av. Achille Peretti, 92200 Neuilly-sur-Seine</Text>
-            </Container>
-
+            <Stack direction={'row'} spacing={6} justify={'center'} align={'center'}>
+                <Stack direction={'row'} marginTop="10">
+                <Image src="https://api.codeur.com/widgets/badge.svg?k=v7oPAwyJHQjXqAz4"/>
+                <Image src={useColorModeValue(phoneinformations_whitebg, phoneinformations_defaultbg)}/>
+                </Stack>
+            </Stack>
+            <Stack direction={'row'} spacing={6}
+                   justify={'center'}
+                   align={'center'}>
+                <Container
+                    as={Stack}
+                    maxW={'6xl'}
+                    py={4}
+                    spacing={4}
+                    justify={'center'}
+                    align={'center'}>
+                    <SimpleLogo h="30" />
+                    <Text>L'informatique au service des autres.</Text>
+                    <Text fontSize={'xs'}>99 Av. Achille Peretti, 92200 Neuilly-sur-Seine</Text>
+                </Container>
+            </Stack>
             <Box
                 borderTopWidth={1}
                 borderStyle={'solid'}
                 borderColor={useColorModeValue('gray.200', 'gray.700')}>
+
                 <Container
                     as={Stack}
                     maxW={'6xl'}
