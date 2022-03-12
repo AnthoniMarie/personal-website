@@ -60,7 +60,7 @@ const Card = ({data}) => {
             <Box w="100%">
                 <Box borderRadius="lg" overflow="hidden">
 
-                    <Link href={"/blog/" + item.attributes.slug} textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                    <Link href={"/blog/details/" + item.attributes.slug} textDecoration="none" _hover={{ textDecoration: 'none' }}>
                         <Image style={{aspectRatio: '3/2'}}
                             transform="scale(1.0)"
                             src={

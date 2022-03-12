@@ -20,7 +20,7 @@ export const Router = () => (
             <Route path={"/"} element={<Landing/>}/>
             <Route path={"/about"} element={<About/>}/>
             <Route path={"/blog"} element={<Blog/>}/>
-            <Route path={"blog/:slug"} element={<Article/>}/>
+            <Route path={"blog/details/:slug"} element={<Article/>}/>
             <Route path={"/contact"} element={<Contact data={"details"}/>}/>
             <Route path={"/contact/book"} element={<Contact data={"book"}/>}/>
         </Routes>
