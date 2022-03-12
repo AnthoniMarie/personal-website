@@ -39,6 +39,7 @@ import {TimeIcon, ChatIcon, PhoneIcon} from "@chakra-ui/icons";
 import {useNavigate} from "react-router-dom";
 import {AnimatedLogo} from "../components/branding/AnimatedLogo";
 import Card from "../components/blog/list/Card";
+import ContactModal from "../components/contact/Modal";
 
 interface FeatureProps {
     title: string
@@ -64,6 +65,7 @@ export const Feature = (props: FeatureProps) => {
 
 export default function Contact({data}) {
     const navigate = useNavigate();
+
     console.log(data);
     const LoadContact = () => {
         if (data == "details")
@@ -133,9 +135,7 @@ export default function Contact({data}) {
                                 <Button leftIcon={<PhoneIcon/>} backgroundColor='#de8814' variant='solid' onClick={() => window.location.href = 'tel:0766082188'}>
                                     M'appeler
                                 </Button>
-                                <Button leftIcon={<ChatIcon/>} backgroundColor='#de8814' variant='solid' onClick={() => {navigate('/contact/book')}}>
-                                    M'envoyer un message
-                                </Button>
+                                <ContactModal/>
                                 <Button leftIcon={<TimeIcon/>} backgroundColor='#6e695e' variant='solid' onClick={() => {navigate('/contact/book')}}>
                                     Planifier un rendez-vous
                                 </Button>
@@ -148,7 +148,7 @@ export default function Contact({data}) {
             return (
                 <AspectRatio maxW='100%' ratio={1}>
                     <iframe
-                        title='naruto'
+                        title='Prise de rendez-vous'
                         src='https://anthonimarieplanification.setmore.com'
                         allowFullScreen
                     />
