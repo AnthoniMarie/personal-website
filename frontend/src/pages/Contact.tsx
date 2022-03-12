@@ -8,6 +8,7 @@ import {
     Text,
     IconButton,
     Button,
+    Stack,
     VStack,
     HStack,
     Wrap,
@@ -17,7 +18,7 @@ import {
     Input,
     InputGroup,
     InputLeftElement,
-    Textarea, Grid, GridItem, chakra, Center,
+    Textarea, Grid, GridItem, chakra, Center, Image, useColorModeValue, SimpleGrid, AspectRatio
 } from '@chakra-ui/react';
 import Navbar from "../components/partials/Navbar"
 import Footer from "../components/partials/Footer"
@@ -29,176 +30,135 @@ import {
     MdOutlineEmail,
 } from 'react-icons/md';
 import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
+import { SimpleLogo } from "../components/branding/SimpleLogo";
+import banner from "../assets/images/contact/banner.jpg";
+import phoneinformations_whitebg from "../assets/images/contact/3_whitebg.png";
+import phoneinformations_defaultbg from "../assets/images/contact/3.png";
+import { FcCurrencyExchange, FcCursor, FcFlashOn } from 'react-icons/fc'
+import {TimeIcon, ChatIcon, PhoneIcon} from "@chakra-ui/icons";
+import {useNavigate} from "react-router-dom";
+import {AnimatedLogo} from "../components/branding/AnimatedLogo";
+import Card from "../components/blog/list/Card";
 
-export default function Contact() {
+interface FeatureProps {
+    title: string
+    children: React.ReactNode
+    icon: React.ReactElement
+}
+
+export const Feature = (props: FeatureProps) => {
+    const { title, children, icon } = props
     return (
-        <>
-        <Navbar/>
-            <Container maxW="full" p={0} overflow="hidden">
-                <Grid
-                      p={{ sm: 5, md: 5, lg: 16 }}
-                      alignItems="center"
-                      justifyContent="center"
-                      backgroundImage={'url(https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)'}
-                      backgroundSize={'cover'}
-                      backgroundPosition={'center center'}
-                    templateColumns={{
-                        base: 'repeat(1, 1fr)',
-                        sm: 'repeat(2, 1fr)',
-                        md: 'repeat(2, 1fr)',
-                    }}
-                    gap={4}>
-                    <Center>
-                    <GridItem colSpan={1}>
-                        <VStack alignItems="flex-start" spacing="20px">
-                            <chakra.h2 fontSize="3xl" fontWeight="700">
-                                Voyez les choses en grand.
-                            </chakra.h2>
-                            <Button colorScheme="blackAlpha" size="md">
-                                Me contacter
-                            </Button>
-                        </VStack>
-                    </GridItem>
-                    </Center>
-                    <GridItem>
-                        <Flex>
-                            <chakra.p>
+        <Stack spacing={{ base: '3', md: '6' }} direction={{ base: 'column', md: 'row' }}>
+            <Box fontSize="6xl">{icon}</Box>
+            <Stack spacing="1">
+                <Text fontWeight="extrabold" fontSize="lg">
+                    {title}
+                </Text>
+                <Box color={useColorModeValue('gray.600', 'gray.400')}>{children}</Box>
+            </Stack>
+        </Stack>
+    )
+}
+
+
+export default function Contact({data}) {
+    const navigate = useNavigate();
+    console.log(data);
+    const LoadContact = () => {
+        if (data == "details")
+            return (
+                <Container maxW="full" p={0} overflow="hidden">
+                    <Grid
+                        p={{ sm: 5, md: 5, lg: 16 }}
+                        alignItems="center"
+                        justifyContent="center"
+                        backgroundImage={banner}
+                        backgroundSize={'cover'}
+                        backgroundPosition={'center center'}
+                        templateColumns={{
+                            base: 'repeat(1, 1fr)',
+                            sm: 'repeat(2, 1fr)',
+                            md: 'repeat(2, 1fr)',
+                        }}
+                        gap={4}>
+                        <Center>
+                            <GridItem colSpan={1}>
+                                <VStack alignItems="flex-start" spacing="20px" marginTop="5">
+                                    <chakra.h2 fontSize="3xl" fontWeight="700">
+                                        Voyez les choses en grand.
+                                    </chakra.h2>
+                                    <chakra.p>
+                                        Parce que réaliser un projet n'est pas une mince affaire...
+                                    </chakra.p>
+                                    <Button bg={'#de8814'} _hover={{bg: '#ff9100'}} size="md">
+                                        Me contacter
+                                    </Button>
+                                </VStack>
+                            </GridItem>
+                        </Center>
+                        <GridItem>
+                            <VStack spacing="20px">
+                                <SimpleLogo h="10vmin"/>
+                            </VStack>
+                        </GridItem>
+                    </Grid>
+                    <Flex>
+                        <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }} borderRadius="lg" style={{textAlign:'center'}}>
+                            <Heading style={{textTransform: 'uppercase'}}>Entrons en liaison</Heading>
+                            <chakra.p marginTop="10">
                                 Parce que réaliser un projet n'est pas une mince affaire...
                             </chakra.p>
-                        </Flex>
-                    </GridItem>
-                </Grid>
-                <Flex>
-                    <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}
-                        color="white"
-                        borderRadius="lg"
-                    >
-                        <Box p={4}>
-                            <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
-                                <WrapItem>
-                                    <Box>
-                                        <Heading>Contact</Heading>
-                                        <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
-                                            Fill up the form below to contact
-                                        </Text>
-                                        <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                                            <VStack pl={0} spacing={3} alignItems="flex-start">
-                                                <Button
-                                                    size="md"
-                                                    height="48px"
-                                                    width="200px"
-                                                    variant="ghost"
-                                                    color="#DCE2FF"
-                                                    _hover={{ border: '2px solid #1C6FEB' }}
-                                                    leftIcon={<MdPhone color="#1970F1" size="20px" />}>
-                                                    +91-988888888
-                                                </Button>
-                                                <Button
-                                                    size="md"
-                                                    height="48px"
-                                                    width="200px"
-                                                    variant="ghost"
-                                                    color="#DCE2FF"
-                                                    _hover={{ border: '2px solid #1C6FEB' }}
-                                                    leftIcon={<MdEmail color="#1970F1" size="20px" />}>
-                                                    hello@abc.com
-                                                </Button>
-                                                <Button
-                                                    size="md"
-                                                    height="48px"
-                                                    width="200px"
-                                                    variant="ghost"
-                                                    color="#DCE2FF"
-                                                    _hover={{ border: '2px solid #1C6FEB' }}
-                                                    leftIcon={<MdLocationOn color="#1970F1" size="20px" />}>
-                                                    Karnavati, India
-                                                </Button>
-                                            </VStack>
-                                        </Box>
-                                        <HStack
-                                            mt={{ lg: 10, md: 10 }}
-                                            spacing={5}
-                                            px={5}
-                                            alignItems="flex-start">
-                                            <IconButton
-                                                aria-label="facebook"
-                                                variant="ghost"
-                                                size="lg"
-                                                isRound={true}
-                                                _hover={{ bg: '#0D74FF' }}
-                                                icon={<MdFacebook size="28px" />}
-                                            />
-                                            <IconButton
-                                                aria-label="github"
-                                                variant="ghost"
-                                                size="lg"
-                                                isRound={true}
-                                                _hover={{ bg: '#0D74FF' }}
-                                                icon={<BsGithub size="28px" />}
-                                            />
-                                            <IconButton
-                                                aria-label="discord"
-                                                variant="ghost"
-                                                size="lg"
-                                                isRound={true}
-                                                _hover={{ bg: '#0D74FF' }}
-                                                icon={<BsDiscord size="28px" />}
-                                            />
-                                        </HStack>
-                                    </Box>
-                                </WrapItem>
-                                <WrapItem>
-                                    <Box bg="white" borderRadius="lg">
-                                        <Box m={8} color="#0B0E3F">
-                                            <VStack spacing={5}>
-                                                <FormControl id="name">
-                                                    <FormLabel>Your Name</FormLabel>
-                                                    <InputGroup borderColor="#E0E1E7">
-                                                        <InputLeftElement
-                                                            pointerEvents="none"
-                                                            children={<BsPerson color="gray.800" />}
-                                                        />
-                                                        <Input type="text" size="md" />
-                                                    </InputGroup>
-                                                </FormControl>
-                                                <FormControl id="name">
-                                                    <FormLabel>Mail</FormLabel>
-                                                    <InputGroup borderColor="#E0E1E7">
-                                                        <InputLeftElement
-                                                            pointerEvents="none"
-                                                            children={<MdOutlineEmail color="gray.800" />}
-                                                        />
-                                                        <Input type="text" size="md" />
-                                                    </InputGroup>
-                                                </FormControl>
-                                                <FormControl id="name">
-                                                    <FormLabel>Message</FormLabel>
-                                                    <Textarea
-                                                        borderColor="gray.300"
-                                                        _hover={{
-                                                            borderRadius: 'gray.300',
-                                                        }}
-                                                        placeholder="message"
-                                                    />
-                                                </FormControl>
-                                                <FormControl id="name" float="right">
-                                                    <Button
-                                                        variant="solid"
-                                                        bg="#0D74FF"
-                                                        color="white"
-                                                        _hover={{}}>
-                                                        Send Message
-                                                    </Button>
-                                                </FormControl>
-                                            </VStack>
-                                        </Box>
-                                    </Box>
-                                </WrapItem>
-                            </Wrap>
+                            <Center><Image src={useColorModeValue(phoneinformations_whitebg, phoneinformations_defaultbg)} onClick={() => window.location.href = 'tel:0766082188'} marginTop="5" style={{width: '350px'}}/></Center>
+                            <Box p={4}>
+                                <Box as="section" maxW="5xl" mx="auto" py="12" px={{ base: '6', md: '8' }}>
+                                    <SimpleGrid columns={{ base: 1, md: 3 }} spacingX="10" spacingY={{ base: '8', md: '14' }}>
+                                        <Feature title="Votre devis est gratuit" icon={<FcCurrencyExchange />}>
+                                            Pour votre projet, la production du devis est entièrement gratuite et sans engagement. Ainsi, vous savez à quoi vous attendre.
+                                        </Feature>
+                                        <Feature title="Planifiez notre rendez-vous" icon={<FcCursor />}>
+                                            Vous avez un emploi du temps très chargé et vous voulez que cela aille vite ? Aucun souci, planifiez vous même directement en ligne notre rendez-vous téléphonique, simplement, facilement et rapidement.
+                                        </Feature>
+                                        <Feature title="N'attendez pas" icon={<FcFlashOn />}>
+                                            Parce que je sais que développer son projet demande d'être rapide et engage beaucoup d'angoisse, je vous propose un temps de réponse dans les plus brefs délais et pratique.
+                                        </Feature>
+                                    </SimpleGrid>
+                                </Box>
+                            </Box>
+                            <Stack align={'center'}
+                                   alignSelf={'center'}
+                                   position={'relative'}
+                                   marginBottom="5">
+
+                                <Button leftIcon={<PhoneIcon/>} backgroundColor='#de8814' variant='solid' onClick={() => window.location.href = 'tel:0766082188'}>
+                                    M'appeler
+                                </Button>
+                                <Button leftIcon={<ChatIcon/>} backgroundColor='#de8814' variant='solid' onClick={() => {navigate('/contact/book')}}>
+                                    M'envoyer un message
+                                </Button>
+                                <Button leftIcon={<TimeIcon/>} backgroundColor='#6e695e' variant='solid' onClick={() => {navigate('/contact/book')}}>
+                                    Planifier un rendez-vous
+                                </Button>
+                            </Stack>
                         </Box>
-                    </Box>
-                </Flex>
-            </Container>
+                    </Flex>
+                </Container>
+            )
+        else
+            return (
+                <AspectRatio maxW='100%' ratio={1}>
+                    <iframe
+                        title='naruto'
+                        src='https://anthonimarieplanification.setmore.com'
+                        allowFullScreen
+                    />
+                </AspectRatio>
+            )
+    }
+    return (
+        <>
+            <Navbar/>
+            <LoadContact/>
             <Footer/>
         </>
     );

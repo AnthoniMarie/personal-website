@@ -15,6 +15,8 @@ import {
     Container,
     VStack,
 } from '@chakra-ui/react';
+import ReactMarkdown from 'react-markdown';
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 
 import {API_URL} from "../../../constants/misc";
 import {useParams} from "react-router-dom";
@@ -63,13 +65,18 @@ const ArticleContent = ({data}) => {
 
     return (
         <>
-            <VStack paddingTop="40px" spacing="2" alignItems="center">
-                <Heading as="h2" style={{textAlign:'center'}}>{data.title}</Heading>
-                <Text as="p" fontSize="lg">
-                    {data.description}
+            <Heading as="h2" marginTop="5" style={{textAlign:'center'}}>
+                {data.title}
+            </Heading>
+            <Text fontSize="sm" style={{textAlign:'center'}}>Par {data.author} | Posté le {new Date(data.publishedAt).toLocaleDateString()}</Text>
+                <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
+                <Box boxSize='100%' >
+                    <Image src='http://localhost:1337/uploads/large_ladefense_ia_1_fb1d0fa2e7.jpeg' alt={data.title} borderRadius="lg"/>
+                </Box>
+                <Text as="p" fontSize="lg" style={{textAlign:'center'}} marginTop="5">
+                    <ReactMarkdown components={ChakraUIRenderer()} children={data.content} skipHtml transformImageUri={uri => API_URL + uri}/>
                 </Text>
-            </VStack>
-            <Text>Data: {JSON.stringify(data)}</Text>
+                </Box>
         </>
     );
 }

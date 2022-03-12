@@ -12,6 +12,7 @@ import {
 
 import boulistenaute from "../../assets/images/testimonials/boulistenaute.png"
 import sonoscanner from "../../assets/images/testimonials/sonoscanner.png"
+import lagarderetr from "../../assets/images/testimonials/ltr.png"
 
 const Testimonial = ({ children }: { children: ReactNode }) => {
     return <Box>{children}</Box>;
@@ -115,6 +116,20 @@ const Testimonials = () => {
                     </Testimonial>
                     <Testimonial>
                         <TestimonialContent>
+                            <TestimonialHeading>Excellent service</TestimonialHeading>
+                            <TestimonialText>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
+                                neque sed imperdiet nibh lectus feugiat nunc sem.
+                            </TestimonialText>
+                        </TestimonialContent>
+                        <TestimonialAvatar
+                            src={lagarderetr}
+                            name={'L.Sandoval'}
+                            title={'Lagardère Travel Retail'}
+                        />
+                    </Testimonial>
+                    <Testimonial>
+                        <TestimonialContent>
                             <TestimonialHeading>Merci à Anthoni</TestimonialHeading>
                             <TestimonialText>
                                 Quelqu'un sur lequel on peut compter, ce qui est devenu une valeur rare!
@@ -124,22 +139,6 @@ const Testimonials = () => {
                             src={sonoscanner}
                             name={'Directeur des opérations'}
                             title={'Sonoscanner'}
-                        />
-                    </Testimonial>
-                    <Testimonial>
-                        <TestimonialContent>
-                            <TestimonialHeading>Excellent service</TestimonialHeading>
-                            <TestimonialText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                                neque sed imperdiet nibh lectus feugiat nunc sem.
-                            </TestimonialText>
-                        </TestimonialContent>
-                        <TestimonialAvatar
-                            src={
-                                'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-                            }
-                            name={'xx'}
-                            title={'Société'}
                         />
                     </Testimonial>
                 </Stack>

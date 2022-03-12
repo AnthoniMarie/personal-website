@@ -25,16 +25,18 @@ import {
 import { SimpleLogo } from "../branding/SimpleLogo"
 import * as React from "react";
 import {useNavigate} from "react-router-dom";
+import {AnimatedLogo} from "../branding/AnimatedLogo";
 
 export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
+    const navigate = useNavigate();
 
     return (
         <Box>
             <Flex style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: 'rgb(246, 147, 14)', padding: '1px'}}
                 bg={useColorModeValue('white', 'gray.800')}
                 color={useColorModeValue('gray.600', 'white')}
-                minH={'60px'}
+                minH={'50px'}
                 py={{ base: 2 }}
                 px={{ base: 4 }}
                 borderBottom={1}
@@ -54,37 +56,29 @@ export default function Navbar() {
                         aria-label={'Toggle Navigation'}
                     />
                 </Flex>
-                <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+                <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
                     <Text
                         textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
                         fontFamily={'heading'}
                         color={useColorModeValue('gray.800', 'white')}>
                     </Text>
-                    <Flex style={{flexDirection:'row', alignItems:'center'}}>
-                        <SimpleLogo h="3vmin" />
-                        <Text fontSize="lg" fontWeight={500}>&nbsp;nthoni Marie</Text>
+                    <Flex style={{flexDirection:'row', alignItems:'center'}} onClick={() => {navigate('/')}}>
+                        <AnimatedLogo h="3vmin" />
+                        <Text fontSize="lg" fontWeight={500} style={{whiteSpace: 'nowrap'}}>&nbsp;NTHONI MARIE</Text>
                     </Flex>
                 </Flex>
-                <Flex flex={{ base: 7 }} justify={{ base: 'center' }}>
-
+                <Flex flex={{ base: 9 }} justify={{ base: 'center' }}>
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
                         <DesktopNav />
                     </Flex>
                 </Flex>
 
                 <Stack
-                    flex={{ base: 1, md: 0 }}
-                    justify={'flex-end'}
+                    flex={{ base: 1 }}
+                    justify={{  md: 'start' }}
                     direction={'row'}
-                    spacing={6}>
-                    <Button
-                        as={'a'}
-                        fontSize={'sm'}
-                        fontWeight={400}
-                        variant={'link'}
-                        href={'#'}>
-                        Espace
-                    </Button>
+                    spacing={6}
+                   >
                     <Button
                         display={{ base: 'none', md: 'inline-flex' }}
                         fontSize={'sm'}
@@ -93,7 +87,9 @@ export default function Navbar() {
                         bg={'#de8814'}
                         _hover={{
                             bg: '#ff9100',
-                        }}>
+                        }}
+                        onClick={() => {navigate('/contact')}}
+                    >
                         Proposer un projet
                     </Button>
                 </Stack>
@@ -294,6 +290,6 @@ const NAV_ITEMS: Array<NavItem> = [
     },
     {
         label: 'Me contacter',
-        href: '#',
+        href: '/contact',
     }
 ];

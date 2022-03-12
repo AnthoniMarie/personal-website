@@ -49,10 +49,7 @@ const Article = () => {
     return (
         <>
             <Navbar/>
-            <Container maxW={'7xl'} p="12">
-                <Heading as="h2" marginTop="5">
-                    Article
-                </Heading>
+            <Container maxW={'4xl'} py={12}>
                 <LoadArticle/>
             </Container>
             <Footer/>

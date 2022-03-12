@@ -27,6 +27,7 @@ import Testimonials from "../components/testimonials/Testimonials";
 
 import anthonimarie_profilepic from "../assets/images/anthonimarie_profilepic.jpg"
 import {useNavigate} from "react-router-dom";
+import {SimpleLogo} from "../components/branding/SimpleLogo";
 
 interface StatsCardProps {
     title: string;
@@ -94,7 +95,7 @@ export default function About() {
             <Navbar/>
             <Container maxW={'5xl'} py={12}>
                 <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
-                    <Center><AnimatedLogo h="10vmin" pointerEvents="none" /></Center>
+                    <Center><SimpleLogo h="10vmin" pointerEvents="none" /></Center>
                     <chakra.h1
                         textAlign={'center'}
                         fontSize={'4xl'}

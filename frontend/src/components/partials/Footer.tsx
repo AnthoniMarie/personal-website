@@ -57,6 +57,8 @@ export default function Footer() {
                 justify={'center'}
                 align={'center'}>
                 <SimpleLogo h="30" />
+                <Text>L'informatique au service des autres.</Text>
+                <Text fontSize={'xs'}>99 Av. Achille Peretti, 92200 Neuilly-sur-Seine</Text>
             </Container>
 
             <Box
