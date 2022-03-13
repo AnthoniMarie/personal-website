@@ -178,22 +178,22 @@ export default function About() {
                     <SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 5, lg: 8 }}>
                         <StatsCard
                             title={'Projets'}
-                            stat={'42'}
+                            stat={'+50'}
                             icon={<FcFolder size={'3em'} />}
                         />
                         <StatsCard
                             title={'Clients'}
-                            stat={'42'}
+                            stat={'+20'}
                             icon={<FcConferenceCall size={'3em'} />}
                         />
                         <StatsCard
-                            title={'Visites uniques'}
-                            stat={'42'}
+                            title={'Avis'}
+                            stat={'+10'}
                             icon={<FcGlobe size={'3em'} />}
                         />
                         <StatsCard
-                            title={'Thèmes de travail'}
-                            stat={'42'}
+                            title={'Axes de travail'}
+                            stat={'+5'}
                             icon={<FcGraduationCap size={'3em'} />}
                         />
                     </SimpleGrid>

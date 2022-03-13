@@ -103,6 +103,19 @@ const Testimonials = () => {
                     spacing={{ base: 10, md: 4, lg: 10 }}>
                     <Testimonial>
                         <TestimonialContent>
+                            <TestimonialHeading>Très bon élément</TestimonialHeading>
+                            <TestimonialText>
+                                Merci à Anthoni pour son travail et son investissement
+                            </TestimonialText>
+                        </TestimonialContent>
+                        <TestimonialAvatar
+                            src={lagarderetr}
+                            name={'Digital'}
+                            title={'Lagardère Travel Retail (DFG)'}
+                        />
+                    </Testimonial>
+                    <Testimonial>
+                        <TestimonialContent>
                             <TestimonialHeading>Un jeune développeur à qui vous pouvez faire entièrement confiance !</TestimonialHeading>
                             <TestimonialText>
                                 Encore merci à Anthoni de m’avoir assisté dans cette mission ! Ce jeune développeur montre déjà de belles qualités !!
@@ -112,20 +125,6 @@ const Testimonials = () => {
                             src={boulistenaute}
                             name={'Lionel Zanet (Google)'}
                             title={'Boulistenaute'}
-                        />
-                    </Testimonial>
-                    <Testimonial>
-                        <TestimonialContent>
-                            <TestimonialHeading>Excellent service</TestimonialHeading>
-                            <TestimonialText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                                neque sed imperdiet nibh lectus feugiat nunc sem.
-                            </TestimonialText>
-                        </TestimonialContent>
-                        <TestimonialAvatar
-                            src={lagarderetr}
-                            name={'L.Sandoval'}
-                            title={'Lagardère Travel Retail'}
                         />
                     </Testimonial>
                     <Testimonial>
