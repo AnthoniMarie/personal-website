@@ -45,9 +45,9 @@ const ArticleContent = ({data}) => {
             </Heading>
             <Text fontSize="sm" style={{textAlign:'center'}}>Par {data.author} | Posté le {new Date(data.publishedAt).toLocaleDateString()}</Text>
                 <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
-                <Box boxSize='100%' >
-                    <Image src='http://localhost:1337/uploads/large_ladefense_ia_1_fb1d0fa2e7.jpeg' alt={data.title} borderRadius="lg"/>
-                </Box>
+                {/*<Box boxSize='100%' >*/}
+                {/*    <Image src='http://localhost:1337/uploads/large_ladefense_ia_1_fb1d0fa2e7.jpeg' alt={data.title} borderRadius="lg"/>*/}
+                {/*</Box>*/}
                     <ReactMarkdown components={ChakraUIRenderer(customArticle)} children={data.content} skipHtml transformImageUri={uri => API_URL + uri}/>
                 </Box>
         </>
