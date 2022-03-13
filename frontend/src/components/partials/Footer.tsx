@@ -10,7 +10,7 @@ import {
     VisuallyHidden,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import { SimpleLogo } from "../branding/SimpleLogo"
 import { ColorModeSwitcher } from "../../ColorModeSwitcher"
@@ -90,14 +90,17 @@ export default function Footer() {
                     <Text>© 2022 Anthoni Marie. All rights reserved.</Text>
                     <Text fontSize="xs">Made with 🚀 with Chakra UI.</Text>
                     <Stack direction={'row'} spacing={6}>
-                        <SocialButton label={'Twitter'} href={'#'}>
+                        <SocialButton label={'Twitter'} href={'https://twitter.com/anthoni_marie'}>
                             <FaTwitter />
                         </SocialButton>
-                        <SocialButton label={'YouTube'} href={'#'}>
-                            <FaYoutube />
+                        <SocialButton label={'GitHub'} href={'https://github.com/AnthoniMarie'}>
+                            <FaGithub />
                         </SocialButton>
-                        <SocialButton label={'Instagram'} href={'#'}>
+                        <SocialButton label={'Instagram'} href={'http://instagram.com/anthoni.marie'}>
                             <FaInstagram />
+                        </SocialButton>
+                        <SocialButton label={'Linkedin'} href={'https://www.linkedin.com/in/anthoni-marie/'}>
+                            <FaLinkedin />
                         </SocialButton>
                     </Stack>
                     <ColorModeSwitcher justifySelf="flex-end" />
