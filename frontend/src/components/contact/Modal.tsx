@@ -65,6 +65,7 @@ function ContactModal() {
                             isClosable: true,
                             position: "top-right"
                         })
+                        onClose();
                     }
                 })
                 .catch((error) => {
@@ -77,7 +78,6 @@ function ContactModal() {
                         position: "top-right"
                     })
                 });
-            onClose();
         } catch (err: any) {
             toast({
                 title: 'Quelque chose ne vas pas :(',
