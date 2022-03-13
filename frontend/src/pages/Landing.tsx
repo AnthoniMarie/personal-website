@@ -79,7 +79,7 @@ export default function Landing() {
                     <Stack align={'center'}
                            alignSelf={'center'}
                            position={'relative'}>
-                        <Button leftIcon={<Search2Icon/>} backgroundColor='#de8814' variant='solid' onClick={() => {navigate('/blog')}}>
+                        <Button leftIcon={<Search2Icon/>} backgroundColor='#de8814' variant='solid' onClick={() => {navigate('/solutions')}}>
                             Découvrir
                         </Button>
                     </Stack>

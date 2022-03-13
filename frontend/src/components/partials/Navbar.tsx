@@ -90,7 +90,7 @@ export default function Navbar() {
                         }}
                         onClick={() => {navigate('/contact')}}
                     >
-                        Proposer un projet
+                        J'ai un projet ✋
                     </Button>
                 </Stack>
             </Flex>
@@ -123,7 +123,7 @@ const DesktopNav = () => {
                                 color={linkColor}
                                 _hover={{
                                     textDecoration: 'none',
-                                    color: linkHoverColor,
+                                    color: '#ff9100'
                                 }}>
                                 {navItem.label}
                             </Link>
@@ -162,12 +162,12 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
             display={'block'}
             p={2}
             rounded={'md'}
-            _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+            _hover={{ bg: useColorModeValue('#ff9100', 'gray.900') }}>
             <Stack direction={'row'} align={'center'}>
                 <Box>
                     <Text
                         transition={'all .3s ease'}
-                        _groupHover={{ color: 'pink.400' }}
+                        _groupHover={{ color: '#ff9100' }}
                         fontWeight={500}>
                         {label}
                     </Text>
@@ -181,7 +181,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
                     justify={'flex-end'}
                     align={'center'}
                     flex={1}>
-                    <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+                    <Icon color={'#ff9100'} w={5} h={5} as={ChevronRightIcon} />
                 </Flex>
             </Stack>
         </Link>
@@ -262,15 +262,15 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
     {
-        label: 'Solutions',
-        href: '#',
+        label: 'SOLUTIONS',
+        href: '/solutions',
     },
     {
-        label: 'Qui suis-je ?',
+        label: 'A PROPOS',
         href: '/about',
     },
     {
-        label: 'Projets',
+        label: 'PROJETS',
         children: [
             {
                 label: 'Meilleurs projects',
@@ -285,11 +285,11 @@ const NAV_ITEMS: Array<NavItem> = [
         ],
     },
     {
-        label: 'Blog',
+        label: 'BLOG',
         href: '/blog',
     },
     {
-        label: 'Me contacter',
+        label: 'CONTACTER',
         href: '/contact',
     }
 ];
