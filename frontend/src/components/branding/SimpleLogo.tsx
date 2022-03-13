@@ -4,8 +4,8 @@ import {
   keyframes,
   ImageProps,
   forwardRef,
-  usePrefersReducedMotion,
 } from "@chakra-ui/react"
+
 import logo from "../../assets/images/anthonimarie.svg"
 
 

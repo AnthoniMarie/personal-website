@@ -1,47 +1,34 @@
 import * as React from "react";
-import {useEffect} from "react";
 import {
     Container,
     Flex,
     Box,
     Heading,
     Text,
-    IconButton,
     Button,
     Stack,
     VStack,
-    HStack,
-    Wrap,
-    WrapItem,
-    FormControl,
-    FormLabel,
-    Input,
-    InputGroup,
-    InputLeftElement,
-    Textarea, Grid, GridItem, chakra, Center, Image, useColorModeValue, SimpleGrid, AspectRatio
+    Grid,
+    GridItem,
+    chakra,
+    Center,
+    Image,
+    useColorModeValue,
+    SimpleGrid,
+    AspectRatio
 } from '@chakra-ui/react';
+import {useNavigate} from "react-router-dom";
+import {TimeIcon, PhoneIcon} from "@chakra-ui/icons";
+import { FcCurrencyExchange, FcCursor, FcFlashOn } from 'react-icons/fc'
+
 import Navbar from "../components/partials/Navbar"
 import Footer from "../components/partials/Footer"
-import {
-    MdPhone,
-    MdEmail,
-    MdLocationOn,
-    MdFacebook,
-    MdOutlineEmail,
-} from 'react-icons/md';
-import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
 import { SimpleLogo } from "../components/branding/SimpleLogo";
+import ContactModal from "../components/contact/Modal";
+import Meta from "../components/seo/Meta";
 import banner from "../assets/images/contact/banner.jpg";
 import phoneinformations_whitebg from "../assets/images/contact/3_whitebg.png";
 import phoneinformations_defaultbg from "../assets/images/contact/3.png";
-import { FcCurrencyExchange, FcCursor, FcFlashOn } from 'react-icons/fc'
-import {TimeIcon, ChatIcon, PhoneIcon} from "@chakra-ui/icons";
-import {useNavigate} from "react-router-dom";
-import {AnimatedLogo} from "../components/branding/AnimatedLogo";
-import Card from "../components/blog/list/Card";
-import ContactModal from "../components/contact/Modal";
-import {Helmet, HelmetProvider} from "react-helmet-async";
-import Meta from "../components/seo/Meta";
 
 interface FeatureProps {
     title: string

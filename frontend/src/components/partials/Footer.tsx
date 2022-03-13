@@ -9,10 +9,11 @@ import {
     useColorModeValue,
     VisuallyHidden,
 } from '@chakra-ui/react';
-import { SimpleLogo } from "../branding/SimpleLogo"
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-import { ColorModeSwitcher } from "../../ColorModeSwitcher"
 import { ReactNode } from 'react';
+import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+
+import { SimpleLogo } from "../branding/SimpleLogo"
+import { ColorModeSwitcher } from "../../ColorModeSwitcher"
 import phoneinformations_whitebg from "../../assets/images/contact/5_whitebg.png";
 import phoneinformations_defaultbg from "../../assets/images/contact/5.png";
 

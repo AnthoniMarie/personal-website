@@ -5,20 +5,12 @@ import {
     Link,
     Image,
     Text,
-    Divider,
     HStack,
-    Tag,
-    Wrap,
     WrapItem,
     SpaceProps,
-    useColorModeValue,
-    Container,
-    VStack,
 } from '@chakra-ui/react';
 
 import {API_URL} from "../../../constants/misc";
-import Article from "../../../pages/blog/Article";
-
 
 interface IBlogTags {
     tags: Array<string>;

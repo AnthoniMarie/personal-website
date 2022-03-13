@@ -1,14 +1,16 @@
 import * as React from "react"
 import {
-    ChakraProvider,
-    Box,
     Text,
-    Link,
     VStack,
-    Code,
-    Grid,
-    theme, Button, useBreakpointValue, Stack, Flex, position, Center,
+    Button,
+    useBreakpointValue,
+    Stack,
+    Flex,
+    Center,
 } from "@chakra-ui/react"
+import {useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+import Granim from "granim";
 import { Search2Icon } from '@chakra-ui/icons'
 import TypeAnimation from 'react-type-animation';
 
@@ -16,12 +18,6 @@ import { SimpleLogo } from "../components/branding/SimpleLogo"
 import Navbar from "../components/partials/Navbar"
 import Footer from "../components/partials/Footer"
 import Meta from "../components/seo/Meta"
-import { useNavigate } from "react-router-dom";
-import Granim from "granim";
-import {useEffect} from "react";
-import {Helmet, HelmetProvider} from "react-helmet-async";
-
-import logoblack from "../assets/images/logo-black.png"
 
 export default function Landing() {
     const seoData = {

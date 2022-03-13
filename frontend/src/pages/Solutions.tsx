@@ -1,38 +1,18 @@
 import * as React from "react";
-import {useEffect} from "react";
 import {
     Container,
     Flex,
     Box,
     Heading,
     Text,
-    IconButton,
     Button,
     Stack,
-    VStack,
-    HStack,
-    Wrap,
-    WrapItem,
-    FormControl,
-    FormLabel,
-    Input,
-    InputGroup,
-    InputLeftElement,
-    Textarea, Grid, GridItem, chakra, Center, Image, useColorModeValue, SimpleGrid,
+    chakra,
+    Center,
+    useColorModeValue,
+    SimpleGrid,
 } from '@chakra-ui/react';
-import Navbar from "../components/partials/Navbar"
-import Footer from "../components/partials/Footer"
-import {
-    MdPhone,
-    MdEmail,
-    MdLocationOn,
-    MdFacebook,
-    MdOutlineEmail,
-} from 'react-icons/md';
-import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
-import { SimpleLogo } from "../components/branding/SimpleLogo";
-import banner from "../assets/images/contact/banner.jpg";
-
+import {useNavigate} from "react-router-dom";
 import {
     FcAssistant,
     FcTodoList,
@@ -42,8 +22,9 @@ import {
     FcTabletAndroid,
     FcInvite
 } from 'react-icons/fc'
-import {useNavigate} from "react-router-dom";
-import {Helmet, HelmetProvider} from "react-helmet-async";
+
+import Navbar from "../components/partials/Navbar"
+import Footer from "../components/partials/Footer"
 import Meta from "../components/seo/Meta";
 
 interface FeatureProps {
@@ -51,7 +32,6 @@ interface FeatureProps {
     children: React.ReactNode
     icon: React.ReactElement
 }
-
 export const Feature = (props: FeatureProps) => {
     const { title, children, icon } = props
     return (
@@ -66,7 +46,6 @@ export const Feature = (props: FeatureProps) => {
         </Stack>
     )
 }
-
 
 export default function Solutions() {
     const seoData = {

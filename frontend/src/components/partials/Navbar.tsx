@@ -1,3 +1,4 @@
+import * as React from "react";
 import {
     Box,
     Flex,
@@ -22,9 +23,8 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
 } from '@chakra-ui/icons';
-import { SimpleLogo } from "../branding/SimpleLogo"
-import * as React from "react";
 import {useNavigate} from "react-router-dom";
+
 import {AnimatedLogo} from "../branding/AnimatedLogo";
 
 export default function Navbar() {

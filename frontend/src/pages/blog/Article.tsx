@@ -7,15 +7,13 @@ import {
     Container,
 } from '@chakra-ui/react';
 import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
 
-import { ColorModeSwitcher } from "../../ColorModeSwitcher"
 import { AnimatedLogo } from "../../components/branding/AnimatedLogo"
 import Navbar from "../../components/partials/Navbar"
 import Footer from "../../components/partials/Footer"
-import Card from "../../components/blog/list/Card";
 import ArticleContent from "../../components/blog/article/ArticleContent";
 import {API_URL} from "../../constants/misc";
-import {useParams} from "react-router-dom";
 
 const Article = () => {
     const { slug } = useParams();

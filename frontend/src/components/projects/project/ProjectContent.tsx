@@ -15,12 +15,12 @@ import {
     Container,
     VStack,
 } from '@chakra-ui/react';
+import {useParams} from "react-router-dom";
 import ReactMarkdown from 'react-markdown';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 
-import {API_URL} from "../../../constants/misc";
-import {useParams} from "react-router-dom";
 import Meta from "../../seo/Meta";
+import {API_URL} from "../../../constants/misc";
 
 const ProjectContent = ({data}) => {
     const seoData = {

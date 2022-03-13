@@ -1,3 +1,4 @@
+import * as React from "react";
 import {
     Container,
     SimpleGrid,
@@ -9,8 +10,16 @@ import {
     StackDivider,
     Icon,
     chakra,
-    useColorModeValue, Stat, StatLabel, Box, StatNumber, background, Center, Button,
+    useColorModeValue,
+    Stat,
+    StatLabel,
+    Box,
+    StatNumber,
+    Center,
+    Button,
 } from '@chakra-ui/react';
+import { ReactElement } from 'react';
+import {useNavigate} from "react-router-dom";
 import { ReactNode } from 'react';
 import {
     FiCode,
@@ -18,17 +27,12 @@ import {
     FiStar,
 } from 'react-icons/fi';
 import {FcGlobe, FcConferenceCall, FcFolder, FcGraduationCap, FcFlashOn} from "react-icons/fc";
-import { ReactElement } from 'react';
-import Navbar from "../components/partials/Navbar";
-import * as React from "react";
-import Footer from "../components/partials/Footer";
-import { AnimatedLogo } from "../components/branding/AnimatedLogo"
-import Testimonials from "../components/testimonials/Testimonials";
 
+import Navbar from "../components/partials/Navbar";
+import Footer from "../components/partials/Footer";
+import Testimonials from "../components/testimonials/Testimonials";
 import anthonimarie_profilepic from "../assets/images/anthonimarie_profilepic.jpg"
-import {useNavigate} from "react-router-dom";
 import {SimpleLogo} from "../components/branding/SimpleLogo";
-import {Helmet, HelmetProvider} from "react-helmet-async";
 import Meta from "../components/seo/Meta";
 
 interface StatsCardProps {

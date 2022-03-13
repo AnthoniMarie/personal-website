@@ -1,37 +1,21 @@
 import * as React from "react"
 import {
-    Box,
-    Heading,
     Link,
-    Image,
-    Text,
-    Divider,
-    HStack,
-    Tag,
-    Wrap,
-    WrapItem,
-    SpaceProps,
-    useColorModeValue,
-    Container,
-    VStack,
     Table,
     Thead,
     Tbody,
-    Tfoot,
     Tr,
     Th,
     Td,
-    TableCaption,
     Button,
     Progress,
     Badge
 } from '@chakra-ui/react';
 
-import {API_URL} from "../../../constants/misc";
 import {ViewIcon} from "@chakra-ui/icons";
+import {API_URL} from "../../../constants/misc";
 
 const Line = ({data}) => {
-    console.log(data);
     const ConditionalState = (data) => {
         if (data.state == "todo") {
             return (<Badge>Planifié</Badge>

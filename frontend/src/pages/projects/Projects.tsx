@@ -7,16 +7,15 @@ import {
     Container,
 } from '@chakra-ui/react';
 import {useEffect, useState} from "react";
+import {Helmet, HelmetProvider} from "react-helmet-async";
 
 import { ColorModeSwitcher } from "../../ColorModeSwitcher"
 import { AnimatedLogo } from "../../components/branding/AnimatedLogo"
 import Navbar from "../../components/partials/Navbar"
 import Footer from "../../components/partials/Footer"
 import Line from "../../components/projects/list/Line";
-
-import {API_URL} from "../../constants/misc";
-import {Helmet, HelmetProvider} from "react-helmet-async";
 import Meta from "../../components/seo/Meta";
+import {API_URL} from "../../constants/misc";
 
 const Projects = () => {
     const seoData = {
