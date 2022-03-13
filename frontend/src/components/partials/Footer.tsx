@@ -13,8 +13,8 @@ import { SimpleLogo } from "../branding/SimpleLogo"
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { ColorModeSwitcher } from "../../ColorModeSwitcher"
 import { ReactNode } from 'react';
-import phoneinformations_whitebg from "../../assets/images/contact/6_whitebg.png";
-import phoneinformations_defaultbg from "../../assets/images/contact/6.png";
+import phoneinformations_whitebg from "../../assets/images/contact/5_whitebg.png";
+import phoneinformations_defaultbg from "../../assets/images/contact/5.png";
 
 const SocialButton = ({
                           children,
@@ -55,7 +55,7 @@ export default function Footer() {
             <Stack direction={'row'} spacing={6} justify={'center'} align={'center'}>
                 <Stack direction={'row'} marginTop="10">
                 <Image src="https://api.codeur.com/widgets/badge.svg?k=v7oPAwyJHQjXqAz4"/>
-                <Image src={useColorModeValue(phoneinformations_whitebg, phoneinformations_defaultbg)}/>
+                <Image src={useColorModeValue(phoneinformations_whitebg, phoneinformations_defaultbg)} onClick={() => window.location.href = 'tel:0766082188'}/>
                 </Stack>
             </Stack>
             <Stack direction={'row'} spacing={6}
