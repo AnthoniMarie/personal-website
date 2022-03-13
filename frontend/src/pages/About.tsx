@@ -141,7 +141,6 @@ export default function About() {
                             <Text>Pour me perfectionner dans le domaine je participe à l'élaboration de plusieurs projets. Ces différents projets que j'ai pu commencer pour le premier très jeune, m'ont permis d'évoluer d'années en années et d'acquérir de nombreuses connaissances à travers le travail en équipe.</Text>
                             <Text>Les parties que j'aime le plus dans l'informatique sont celles de la sécurité, le développement (d'infrastructures, d'applications et de sites internet).</Text>
                             <Text>L'informatique est ce qui me passionne le plus, dès que je peux faire quelque chose avec une équipe je le fais afin de satisfaire d'éventuels clients et d'en apprendre plus sur ce que je pratique.</Text>
-                            <Text>Afin de m'aider à financer mes projets et le bon fonctionnement de mon site internet n'hésitez pas à m'aider par le biais de donations :) je vous remercie infiniment d'avance.</Text>
                         <Stack
                             spacing={4}
                             divider={
