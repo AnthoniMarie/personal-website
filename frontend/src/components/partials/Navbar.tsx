@@ -274,11 +274,6 @@ const NAV_ITEMS: Array<NavItem> = [
         href: '#',
         children: [
             {
-                label: 'Meilleurs projects',
-                subLabel: 'Les projets dont je suis le plus fier.',
-                href: '#',
-            },
-            {
                 label: 'Tous mes projets',
                 subLabel: "Liste de tous les projets sur lesquels j'ai pu travailler",
                 href: '/work',

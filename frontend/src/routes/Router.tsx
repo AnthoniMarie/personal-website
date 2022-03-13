@@ -15,6 +15,7 @@ import Contact from "../pages/Contact";
 import Article from "../pages/blog/Article";
 import Solutions from "../pages/Solutions";
 import Projects from "../pages/projects/Projects";
+import Project from "../pages/projects/Project";
 
 export const Router = () => (
     <BrowserRouter>
@@ -27,6 +28,7 @@ export const Router = () => (
             <Route path={"/contact/book"} element={<Contact data={"book"}/>}/>
             <Route path={"/solutions"} element={<Solutions/>}/>
             <Route path={"/work"} element={<Projects/>}/>
+            <Route path={"work/details/:slug"} element={<Project/>}/>
         </Routes>
     </BrowserRouter>
 )
