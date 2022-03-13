@@ -15,12 +15,20 @@ import TypeAnimation from 'react-type-animation';
 import { SimpleLogo } from "../components/branding/SimpleLogo"
 import Navbar from "../components/partials/Navbar"
 import Footer from "../components/partials/Footer"
-
+import Meta from "../components/seo/Meta"
 import { useNavigate } from "react-router-dom";
 import Granim from "granim";
 import {useEffect} from "react";
+import {Helmet, HelmetProvider} from "react-helmet-async";
+
+import logoblack from "../assets/images/logo-black.png"
 
 export default function Landing() {
+    const seoData = {
+        title: "Anthoni Marie | Site web",
+        description: "Découvrez dès maintenant mes services de développement web et informatique. Digitalisation de votre société.",
+        keywords: "anthoni marie, anthoni, marie, anthoni marie c'est qui, développeur web, digitalisation société, digitalisation, digitalisation entreprise, dev web, étudiant développeur, web dev, developer, epitech, développeur epitech, 42, informatique, dépannage informatique, aide informatique gagny, aide informatique paris, aide informatique région parisienne"
+    }
     const navigate = useNavigate();
     useEffect(() => {
         new Granim({
@@ -40,6 +48,7 @@ export default function Landing() {
     }, []);
     return (
     <>
+        <Meta data={seoData}/>
         <Navbar/>
         <Flex
             textAlign="center"

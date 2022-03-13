@@ -15,8 +15,15 @@ import Footer from "../../components/partials/Footer"
 import Line from "../../components/projects/list/Line";
 
 import {API_URL} from "../../constants/misc";
+import {Helmet, HelmetProvider} from "react-helmet-async";
+import Meta from "../../components/seo/Meta";
 
 const Projects = () => {
+    const seoData = {
+        title: "Anthoni Marie | Liste des projets réalisés",
+        description: "Liste  des projets programmés, en cours ou terminés d'Anthoni Marie.",
+        keywords: "anthoni marie, anthoni, marie, anthoni marie projets, développeur web, dev web, étudiant développeur, web dev, developer, epitech, développeur epitech, 42, informatique, dépannage informatique, aide informatique gagny, aide informatique paris, aide informatique région parisienne, projets informatique"
+    }
     const [projects, setProjects] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
@@ -48,6 +55,7 @@ const Projects = () => {
     }
     return (
         <>
+            <Meta data={seoData}/>
             <Navbar/>
             <Container maxW={'7xl'} p="12">
                 <Heading as="h2" marginTop="5">

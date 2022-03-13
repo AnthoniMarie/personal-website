@@ -20,8 +20,14 @@ import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 
 import {API_URL} from "../../../constants/misc";
 import {useParams} from "react-router-dom";
+import Meta from "../../seo/Meta";
 
 const ProjectContent = ({data}) => {
+    const seoData = {
+        title: "Anthoni Marie | Projet " + data.title + " publié sur la liste des projets",
+        description: data.description,
+        keywords: "anthoni marie, anthoni, marie, anthoni marie blog, développeur web, dev web, étudiant développeur, web dev, developer, epitech, développeur epitech, 42, informatique, dépannage informatique, aide informatique gagny, aide informatique paris, aide informatique région parisienne, blog informatique, blog développeur web, blog développeur informatique, visionner projet"
+    }
     const customProject = {
         p: props => {
             const { children } = props;
@@ -34,6 +40,7 @@ const ProjectContent = ({data}) => {
     };
     return (
         <>
+            <Meta data={seoData}/>
             <Heading as="h2" marginTop="5" style={{textAlign:'center'}}>
                 {data.title}
             </Heading>

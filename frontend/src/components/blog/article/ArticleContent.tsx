@@ -20,6 +20,7 @@ import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 
 import {API_URL} from "../../../constants/misc";
 import {useParams} from "react-router-dom";
+import Meta from "../../seo/Meta";
 
 
 interface IBlogTags {
@@ -30,36 +31,13 @@ interface BlogAuthorProps {
     date: Date;
     name: string;
 }
-export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
-    return (
-        <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
-            <Image
-                borderRadius="full"
-                boxSize="40px"
-                src="https://100k-faces.glitch.me/random-image"
-                alt={`Avatar of ${props.name}`}
-            />
-            <Text fontWeight="medium">{props.name}</Text>
-            <Text>—</Text>
-            <Text>{props.date.toLocaleDateString()}</Text>
-        </HStack>
-    );
-};
-const BlogTags: React.FC<IBlogTags> = (props) => {
-    return (
-        <HStack spacing={2} marginTop={props.marginTop}>
-            {props.tags.map((tag) => {
-                return (
-                    <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
-                        {tag}
-                    </Tag>
-                );
-            })}
-        </HStack>
-    );
-};
 
 const ArticleContent = ({data}) => {
+    const seoData = {
+        title: "Anthoni Marie | Article " + data.title + " publié sur le blog",
+        description: data.description,
+        keywords: "anthoni marie, anthoni, marie, anthoni marie blog, développeur web, dev web, étudiant développeur, web dev, developer, epitech, développeur epitech, 42, informatique, dépannage informatique, aide informatique gagny, aide informatique paris, aide informatique région parisienne, blog informatique, blog développeur web, blog développeur informatique, visionner article"
+    }
     const customArticle = {
         p: props => {
             const { children } = props;
@@ -72,6 +50,7 @@ const ArticleContent = ({data}) => {
     };
     return (
         <>
+            <Meta data={seoData}/>
             <Heading as="h2" marginTop="5" style={{textAlign:'center'}}>
                 {data.title}
             </Heading>

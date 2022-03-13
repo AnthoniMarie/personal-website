@@ -43,6 +43,8 @@ import {
     FcInvite
 } from 'react-icons/fc'
 import {useNavigate} from "react-router-dom";
+import {Helmet, HelmetProvider} from "react-helmet-async";
+import Meta from "../components/seo/Meta";
 
 interface FeatureProps {
     title: string
@@ -67,9 +69,15 @@ export const Feature = (props: FeatureProps) => {
 
 
 export default function Solutions() {
+    const seoData = {
+        title: "Anthoni Marie | Solutions",
+        description: "Envie d'un site internet, d'obtenir une visibilité sur internet ou tout simplement une question informatique ? Optez pour les solutions proposées par Anthoni Marie.",
+        keywords: "anthoni marie, anthoni, marie, anthoni marie solutions, développeur web, digitalisation société, digitalisation, digitaliation entreprise, dev web, étudiant développeur, web dev, developer, epitech, développeur epitech, 42, informatique, dépannage informatique, aide informatique gagny, aide informatique paris, aide informatique région parisienne, solutions développeur, solutions informatique, prix informatique"
+    }
     const navigate = useNavigate();
     return (
         <>
+            <Meta data={seoData}/>
         <Navbar/>
             <Container maxW="full" p={0} overflow="hidden">
                 <Flex>

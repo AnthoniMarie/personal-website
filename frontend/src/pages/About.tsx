@@ -28,6 +28,8 @@ import Testimonials from "../components/testimonials/Testimonials";
 import anthonimarie_profilepic from "../assets/images/anthonimarie_profilepic.jpg"
 import {useNavigate} from "react-router-dom";
 import {SimpleLogo} from "../components/branding/SimpleLogo";
+import {Helmet, HelmetProvider} from "react-helmet-async";
+import Meta from "../components/seo/Meta";
 
 interface StatsCardProps {
     title: string;
@@ -89,9 +91,15 @@ const Feature = ({ text, icon, iconBg }: FeatureProps) => {
 };
 
 export default function About() {
+    const seoData = {
+        title: "Anthoni Marie | A propos",
+        description: "A propos d'Anthoni Marie, son parcours et ses compétences.",
+        keywords: "anthoni marie, anthoni, marie, anthoni marie a propos, développeur web, dev web, informations dev web, about, a propos, étudiant développeur, web dev, developer"
+    }
     const navigate = useNavigate();
     return (
         <>
+            <Meta data={seoData}/>
             <Navbar/>
             <Container maxW={'5xl'} py={12}>
                 <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
