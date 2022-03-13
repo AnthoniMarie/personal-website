@@ -12,46 +12,52 @@ import { ColorModeSwitcher } from "../../ColorModeSwitcher"
 import { AnimatedLogo } from "../../components/branding/AnimatedLogo"
 import Navbar from "../../components/partials/Navbar"
 import Footer from "../../components/partials/Footer"
-import Card from "../../components/blog/list/Card";
-import ArticleContent from "../../components/blog/article/ArticleContent";
-import {API_URL} from "../../constants/misc";
-import {useParams} from "react-router-dom";
+import Line from "../../components/projects/list/Line";
 
-const Article = () => {
-    const { slug } = useParams();
-    const [article, setArticle] = useState([]);
+import {API_URL} from "../../constants/misc";
+
+const Projects = () => {
+    const [projects, setProjects] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
     const fetchData = () => {
-        fetch(API_URL + '/api/blogs?filters[slug][$eq]='+slug)
+        fetch(API_URL + '/api/projects?populate=*')
             .then((response) => response.json())
             .then((data) => {
                 setIsLoading(false);
-                setArticle(data.data[0].attributes);
+                setProjects(data.data);
             })
             .catch((error) => {
+                //setIsLoading(false);
                 setIsError(true);
+                console.log(error);
             });
     };
     useEffect(() => {
         fetchData();
     }, []);
-    const LoadArticle = () => {
+    const LoadProjects = () => {
         if (isLoading)
             return (<div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '30vh'}}><AnimatedLogo h="10vmin" pointerEvents="none"/></div>)
         else
             return (
-                <ArticleContent data={article}/>
+                <Wrap spacing="30px" marginTop="5">
+                    {projects && <Line data={projects}/>}
+                </Wrap>
             )
     }
     return (
         <>
             <Navbar/>
-            <Container maxW={'4xl'} py={12}>
-                <LoadArticle/>
+            <Container maxW={'7xl'} p="12">
+                <Heading as="h2" marginTop="5">
+                    Derniers projets
+                </Heading>
+                <Divider marginTop="5" />
+                <LoadProjects/>
             </Container>
             <Footer/>
         </>
     );
 };
-export default Article;
+export default Projects;

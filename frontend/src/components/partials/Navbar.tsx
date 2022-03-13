@@ -271,6 +271,7 @@ const NAV_ITEMS: Array<NavItem> = [
     },
     {
         label: 'PROJETS',
+        href: '#',
         children: [
             {
                 label: 'Meilleurs projects',
@@ -280,7 +281,7 @@ const NAV_ITEMS: Array<NavItem> = [
             {
                 label: 'Tous mes projets',
                 subLabel: "Liste de tous les projets sur lesquels j'ai pu travailler",
-                href: '#',
+                href: '/work',
             },
         ],
     },

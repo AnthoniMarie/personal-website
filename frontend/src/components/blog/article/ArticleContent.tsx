@@ -60,9 +60,16 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
 };
 
 const ArticleContent = ({data}) => {
-
-    console.log(data);
-
+    const customArticle = {
+        p: props => {
+            const { children } = props;
+            return (
+                <Text as="p" fontSize="lg" style={{textAlign:'center'}} marginTop="5">
+                    {children}
+                </Text>
+            );
+        },
+    };
     return (
         <>
             <Heading as="h2" marginTop="5" style={{textAlign:'center'}}>
@@ -73,9 +80,7 @@ const ArticleContent = ({data}) => {
                 <Box boxSize='100%' >
                     <Image src='http://localhost:1337/uploads/large_ladefense_ia_1_fb1d0fa2e7.jpeg' alt={data.title} borderRadius="lg"/>
                 </Box>
-                <Text as="p" fontSize="lg" style={{textAlign:'center'}} marginTop="5">
-                    <ReactMarkdown components={ChakraUIRenderer()} children={data.content} skipHtml transformImageUri={uri => API_URL + uri}/>
-                </Text>
+                    <ReactMarkdown components={ChakraUIRenderer(customArticle)} children={data.content} skipHtml transformImageUri={uri => API_URL + uri}/>
                 </Box>
         </>
     );
