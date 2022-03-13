@@ -11,6 +11,7 @@ module.exports = {
 
     if (!last_name ||!first_name || !email || !phone || !message)
       return (ctx.body = {message: "Please fill all fields"});
+
     try {
       await strapi.plugins['email'].services.email.send({
         to: 'contact@anthoni-marie.fr',
@@ -25,6 +26,7 @@ module.exports = {
     }
     catch (e) {
       ctx.body = {message: "An error occured"};
+      console.log("error occured");
     }
     ctx.body = {message: "Message sent with success"};
   },

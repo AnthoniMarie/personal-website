@@ -18,6 +18,8 @@ import {
 } from '@chakra-ui/react';
 import {ChatIcon} from "@chakra-ui/icons";
 
+import {API_URL} from "../../constants/misc";
+
 function ContactModal() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const toast = useToast()
@@ -36,14 +38,45 @@ function ContactModal() {
     };
     const SendMessage = async () => {
         try {
-            toast({
-                title: 'Tout est bon !',
-                description: "Votre message a bien été envoyé, je vais revenir vers vous au plus vite.",
-                status: 'success',
-                duration: 6000,
-                isClosable: true,
-                position: "top-right"
-            })
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ last_name: formData.last_name, first_name: formData.first_name, email: formData.email, phone: formData.phone, message: formData.message })
+            };
+            fetch(API_URL + '/api/mailing', requestOptions)
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.message == "Please fill all fields") {
+                        toast({
+                            title: 'Attention, petite correction à faire',
+                            description: "Désolé mais il semblerait que vous ayez oublié un champ, remplissez et soumettez à nouveau votre message.",
+                            status: 'warning',
+                            duration: 6000,
+                            isClosable: true,
+                            position: "top-right"
+                        })
+                    }
+                    else {
+                        toast({
+                            title: 'Tout est bon !',
+                            description: "Votre message a bien été envoyé, je vais revenir vers vous au plus vite.",
+                            status: 'success',
+                            duration: 6000,
+                            isClosable: true,
+                            position: "top-right"
+                        })
+                    }
+                })
+                .catch((error) => {
+                    toast({
+                        title: 'Quelque chose ne vas pas :(',
+                        description: "Votre message n'a pas été envoyé, veuillez réessayer ou me contacter par un autre moyen.",
+                        status: 'error',
+                        duration: 6000,
+                        isClosable: true,
+                        position: "top-right"
+                    })
+                });
             onClose();
         } catch (err: any) {
             toast({
@@ -56,7 +89,6 @@ function ContactModal() {
             })
         }
     };
-    console.log(formData.message);
     return (
         <>
             <Button leftIcon={<ChatIcon/>} backgroundColor='#de8814' variant='solid' onClick={onOpen}>
@@ -74,7 +106,7 @@ function ContactModal() {
                     <ModalBody pb={6}>
                         <FormControl id="last_name">
                             <FormLabel>Nom</FormLabel>
-                            <Input name={'last_name'} placeholder='Votre nom' />
+                            <Input name={'last_name'} placeholder='Votre nom' onChange={onChange} value={formData.last_name} />
                         </FormControl>
 
                         <FormControl mt={4} id="first_name">

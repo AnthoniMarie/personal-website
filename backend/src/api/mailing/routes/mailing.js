@@ -4,6 +4,9 @@ module.exports = {
       method: 'POST',
       path: '/mailing',
       handler: 'mailing.index',
+      config: {
+        auth: false,
+      },
     }
   ]
 }
