@@ -32,8 +32,7 @@ import {
 import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
 import { SimpleLogo } from "../components/branding/SimpleLogo";
 import banner from "../assets/images/contact/banner.jpg";
-import phoneinformations_whitebg from "../assets/images/contact/5_whitebg.png";
-import phoneinformations_defaultbg from "../assets/images/contact/5.png";
+
 import {
     FcAssistant,
     FcTodoList,
@@ -79,7 +78,6 @@ export default function Solutions() {
                         <chakra.p marginTop="10">
                             Profitez de plusieurs types de services pour la réalisation de votre projet informatique.
                         </chakra.p>
-                        <Center><Image src={useColorModeValue(phoneinformations_whitebg, phoneinformations_defaultbg)} marginTop="5" onClick={() => window.location.href = 'tel:0766082188'}/></Center>
                         <Box p={4}>
                             <Box as="section" maxW="5xl" mx="auto" py="12" px={{ base: '6', md: '8' }}>
                                 <SimpleGrid columns={{ base: 1, md: 2 }} spacingX="10" spacingY={{ base: '8', md: '14' }}>
