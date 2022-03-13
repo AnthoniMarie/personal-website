@@ -52,6 +52,29 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "progression": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "state": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "todo",
+        "doing",
+        "done"
+      ]
     }
   }
 }
