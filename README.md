@@ -1,7 +1,7 @@
 # personal-website
 
 ![build with Typescript](https://img.shields.io/badge/Build%20with-Typescript-green)
-![build with React Native](https://img.shields.io/badge/Build%20with-React%20Native-green)
+![build with React JS](https://img.shields.io/badge/Build%20with-React%20JS-green)
 ![last commit](https://img.shields.io/github/last-commit/AnthoniMarie/personal-website)
 
 <!-- PROJECT LOGO -->
