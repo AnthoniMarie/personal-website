@@ -127,18 +127,16 @@ export default function Contact({data}) {
                                     </SimpleGrid>
                                 </Box>
                             </Box>
-                            <Stack align={'center'}
-                                   alignSelf={'center'}
-                                   position={'relative'}
-                                   marginBottom="5">
-
-                                <Button leftIcon={<PhoneIcon/>} backgroundColor='#de8814' variant='solid' onClick={() => window.location.href = 'tel:0766082188'}>
-                                    M'appeler
-                                </Button>
-                                <ContactModal/>
-                                <Button leftIcon={<TimeIcon/>} backgroundColor='#6e695e' variant='solid' onClick={() => {navigate('/contact/book')}}>
-                                    Planifier un rendez-vous
-                                </Button>
+                            <Stack direction={'row'} spacing={6} justify={'center'} align={'center'} marginBottom="10">
+                                <Stack direction={'row'} marginTop="10">
+                                    <ContactModal/>
+                                    <Button leftIcon={<PhoneIcon/>} backgroundColor='#de8814' variant='solid' onClick={() => window.location.href = 'tel:0766082188'}>
+                                        M'appeler
+                                    </Button>
+                                    <Button leftIcon={<TimeIcon/>} backgroundColor='#6e695e' variant='solid' onClick={() => {navigate('/contact/book')}}>
+                                        Planifier un rendez-vous
+                                    </Button>
+                                </Stack>
                             </Stack>
                         </Box>
                     </Flex>
