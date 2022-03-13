@@ -37,19 +37,6 @@ export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
         </HStack>
     );
 };
-const BlogTags: React.FC<IBlogTags> = (props) => {
-    return (
-        <HStack spacing={2} marginTop={props.marginTop}>
-            {props.tags.map((tag) => {
-                return (
-                    <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
-                        {tag}
-                    </Tag>
-                );
-            })}
-        </HStack>
-    );
-};
 
 const Card = ({data}) => {
     console.log(data);
@@ -75,7 +62,6 @@ const Card = ({data}) => {
                         />
                     </Link>
                 </Box>
-                <BlogTags tags={['tag1', 'tag2']} marginTop="3" />
                 <Heading fontSize="xl" marginTop="2">
                     <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
                         {item.attributes.title}
