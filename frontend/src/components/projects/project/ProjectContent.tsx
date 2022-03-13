@@ -2,20 +2,8 @@ import * as React from "react"
 import {
     Box,
     Heading,
-    Link,
-    Image,
     Text,
-    Divider,
-    HStack,
-    Tag,
-    Wrap,
-    WrapItem,
-    SpaceProps,
-    useColorModeValue,
-    Container,
-    VStack,
 } from '@chakra-ui/react';
-import {useParams} from "react-router-dom";
 import ReactMarkdown from 'react-markdown';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 

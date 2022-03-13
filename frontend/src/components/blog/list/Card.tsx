@@ -31,7 +31,6 @@ export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
 };
 
 const Card = ({data}) => {
-    console.log(data);
     return (
         <>
             {data && data.map((item, index) =>

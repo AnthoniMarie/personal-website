@@ -12,7 +12,6 @@ import {
     GridItem,
     chakra,
     Center,
-    Image,
     useColorModeValue,
     SimpleGrid,
     AspectRatio
@@ -27,8 +26,6 @@ import { SimpleLogo } from "../components/branding/SimpleLogo";
 import ContactModal from "../components/contact/Modal";
 import Meta from "../components/seo/Meta";
 import banner from "../assets/images/contact/banner.jpg";
-import phoneinformations_whitebg from "../assets/images/contact/3_whitebg.png";
-import phoneinformations_defaultbg from "../assets/images/contact/3.png";
 
 interface FeatureProps {
     title: string
@@ -103,7 +100,6 @@ export default function Contact({data}) {
                             <chakra.p marginTop="10">
                                 Parce que réaliser un projet n'est pas une mince affaire...
                             </chakra.p>
-                            <Center><Image src={useColorModeValue(phoneinformations_whitebg, phoneinformations_defaultbg)} onClick={() => window.location.href = 'tel:0766082188'} marginTop="5" style={{width: '350px'}}/></Center>
                             <Box p={4}>
                                 <Box as="section" maxW="5xl" mx="auto" py="12" px={{ base: '6', md: '8' }}>
                                     <SimpleGrid columns={{ base: 1, md: 3 }} spacingX="10" spacingY={{ base: '8', md: '14' }}>

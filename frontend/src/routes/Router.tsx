@@ -1,9 +1,5 @@
 import * as React from "react"
 import {
-    ChakraProvider,
-    theme,
-} from "@chakra-ui/react"
-import {
     BrowserRouter,
     Routes,
     Route,

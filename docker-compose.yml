@@ -1,36 +1,29 @@
 version: '3.8'
 
 services:
-#  backend:
-#    container_name: 'personalwebsite_backend'
-#    build: './backend'
-#    ports:
-#      - '8080:8080'
-#    links:
-#      - redis
-#    restart: 'on-failure'
-#    environment:
-#      - DATABASE_URL=${DATABASE_URL}
-#      - REDIS_HOST=${REDIS_HOST}
-#      - REDIS_PORT=${REDIS_PORT}
-#      - REDIS_SESSION_SECRET=${REDIS_SESSION_SECRET}
-  postgres:
-    container_name: 'personalwebsite_postgres'
-    image: postgres:13
-    restart: always
-    environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    volumes:
-      - postgres:/var/lib/postgresql/data
+  frontend:
+    build: './frontend'
     ports:
-      - '5432:5432'
-  redis:
-    image: redis:latest
-    restart: always
-    environment:
-      - ALLOW_EMPTY_PASSWORD=yes
+      - '3000:3000'
+    restart: 'on-failure'
+    env_file:
+      - ./frontend/.env
+    networks:
+      - 'frontend'
+
+  backend:
+    build: './backend'
     ports:
-      - "6379:6379"
-volumes:
-  postgres:
+      - '8080:8080'
+    restart: 'on-failure'
+    env_file:
+      - ./backend/.env
+    networks:
+      - 'frontend'
+      - 'backend'
+    links:
+      - frontend
+
+networks:
+  frontend:
+  backend:
