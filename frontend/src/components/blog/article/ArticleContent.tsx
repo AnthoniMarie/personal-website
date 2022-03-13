@@ -2,7 +2,6 @@ import * as React from "react"
 import {
     Box,
     Heading,
-    Image,
     Text,
     SpaceProps,
 } from '@chakra-ui/react';

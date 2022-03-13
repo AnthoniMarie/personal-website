@@ -1,15 +1,12 @@
 import * as React from "react"
 import {
-    Box,
     Heading,
     Divider,
     Wrap,
     Container,
 } from '@chakra-ui/react';
 import {useEffect, useState} from "react";
-import {Helmet, HelmetProvider} from "react-helmet-async";
 
-import { ColorModeSwitcher } from "../../ColorModeSwitcher"
 import { AnimatedLogo } from "../../components/branding/AnimatedLogo"
 import Navbar from "../../components/partials/Navbar"
 import Footer from "../../components/partials/Footer"
@@ -34,9 +31,7 @@ const Projects = () => {
                 setProjects(data.data);
             })
             .catch((error) => {
-                //setIsLoading(false);
                 setIsError(true);
-                console.log(error);
             });
     };
     useEffect(() => {

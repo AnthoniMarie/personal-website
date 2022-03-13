@@ -1,9 +1,5 @@
 import * as React from "react"
 import {
-    Box,
-    Heading,
-    Divider,
-    Wrap,
     Container,
 } from '@chakra-ui/react';
 import {useEffect, useState} from "react";

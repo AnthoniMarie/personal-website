@@ -13,7 +13,6 @@ import {
 } from '@chakra-ui/react';
 
 import {ViewIcon} from "@chakra-ui/icons";
-import {API_URL} from "../../../constants/misc";
 
 const Line = ({data}) => {
     const ConditionalState = (data) => {
