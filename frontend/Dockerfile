@@ -1,4 +1,4 @@
-FROM node:16.2-alpine
+FROM node:16.2-alpine as build
 
 WORKDIR /app
 
@@ -8,6 +8,12 @@ RUN npm install
 
 RUN npm run build
 
-EXPOSE 3000
+CMD ["ls", "-l"]
 
-CMD ["npm", "start"]
+FROM nginx:stable-alpine
+
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+
+COPY --from=build /app/build /usr/share/nginx/html
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
