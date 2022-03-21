@@ -103,9 +103,9 @@ const Testimonials = () => {
                     spacing={{ base: 10, md: 4, lg: 10 }}>
                     <Testimonial>
                         <TestimonialContent>
-                            <TestimonialHeading>Très bon élément</TestimonialHeading>
+                            <TestimonialHeading>Sérieux, investi, réactif et professionnel.</TestimonialHeading>
                             <TestimonialText>
-                                Merci à Anthoni pour son travail et son investissement
+                                Nous sommes satisfaits de son travail et de son implication dans le projet qui lui a été confié.
                             </TestimonialText>
                         </TestimonialContent>
                         <TestimonialAvatar

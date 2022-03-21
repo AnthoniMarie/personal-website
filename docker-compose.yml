@@ -2,27 +2,33 @@ version: '3.8'
 
 services:
   frontend:
+    depends_on:
+      - backend
     build: './frontend'
     ports:
-      - '3000:3000'
+      - '3000:80'
     restart: 'on-failure'
     env_file:
       - ./frontend/.env
     networks:
       - 'frontend'
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
 
   backend:
     build: './backend'
     ports:
-      - '8080:8080'
+      - '8080:1337'
     restart: 'on-failure'
     env_file:
       - ./backend/.env
     networks:
       - 'frontend'
       - 'backend'
-    links:
-      - frontend
+    volumes:
+      - /app/node_modules
+      - ./backend:/app
 
 networks:
   frontend:
