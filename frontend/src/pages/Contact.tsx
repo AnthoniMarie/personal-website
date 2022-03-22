@@ -94,7 +94,6 @@ export default function Contact({data}) {
                             </VStack>
                         </GridItem>
                     </Grid>
-                    <Flex>
                         <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }} borderRadius="lg" style={{textAlign:'center'}}>
                             <Heading style={{textTransform: 'uppercase'}}>Entrons en liaison</Heading>
                             <chakra.p marginTop="10">
@@ -116,7 +115,7 @@ export default function Contact({data}) {
                                 </Box>
                             </Box>
                             <Stack direction={'row'} spacing={6} justify={'center'} align={'center'} marginBottom="10">
-                                <Stack direction={'row'} marginTop="10">
+                                <Stack marginTop="10">
                                     <ContactModal/>
                                     <Button leftIcon={<PhoneIcon/>} backgroundColor='#de8814' variant='solid' onClick={() => window.location.href = 'tel:0766082188'}>
                                         M'appeler
@@ -127,7 +126,6 @@ export default function Contact({data}) {
                                 </Stack>
                             </Stack>
                         </Box>
-                    </Flex>
                 </Container>
             )
         else

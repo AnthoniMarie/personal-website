@@ -211,7 +211,7 @@ export default function About() {
                         Mon travail
                     </chakra.h1>
                     <Center>
-                        <Button rightIcon={<FcFlashOn />} backgroundColor='#de8814' variant='solid' onClick={() => {navigate('/contact')}}>
+                        <Button rightIcon={<FcFlashOn />} backgroundColor='#de8814' variant='solid' onClick={() => {navigate('/work')}}>
                             Liste de mes projets
                         </Button>
                     </Center>
