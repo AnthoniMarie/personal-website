@@ -114,17 +114,19 @@ export default function Contact({data}) {
                                     </SimpleGrid>
                                 </Box>
                             </Box>
-                            <Stack direction={'row'} spacing={6} justify={'center'} align={'center'} marginBottom="10">
-                                <Stack marginTop="10">
-                                    <ContactModal/>
-                                    <Button leftIcon={<PhoneIcon/>} backgroundColor='#de8814' variant='solid' onClick={() => window.location.href = 'tel:0766082188'}>
-                                        M'appeler
-                                    </Button>
-                                    <Button leftIcon={<TimeIcon/>} backgroundColor='#6e695e' variant='solid' onClick={() => {navigate('/contact/book')}}>
-                                        Planifier un rendez-vous
-                                    </Button>
-                                </Stack>
-                            </Stack>
+                            <Box p={2}>
+                                <Box as="section" maxW="3xl" mx="auto" py="12" px={{ base: '6', md: '8' }}>
+                                    <SimpleGrid columns={{ base: 1, md: 3 }} spacingX="5" spacingY={{ base: '4', md: '12' }}>
+                                        <ContactModal/>
+                                        <Button leftIcon={<PhoneIcon/>} backgroundColor='#de8814' variant='solid' onClick={() => window.location.href = 'tel:0766082188'}>
+                                            M'appeler
+                                        </Button>
+                                        <Button leftIcon={<TimeIcon/>} backgroundColor='#6e695e' variant='solid' onClick={() => {navigate('/contact/book')}}>
+                                            Planifier un rendez-vous
+                                        </Button>
+                                    </SimpleGrid>
+                                </Box>
+                            </Box>
                         </Box>
                 </Container>
             )
