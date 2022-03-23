@@ -1,13 +1,25 @@
-FROM node:16.2-alpine
+FROM node:alpine
 
-WORKDIR /app
+RUN mkdir -p /usr/src/app
 
-COPY . .
+ENV PORT 3000
 
-RUN yarn install
+WORKDIR /usr/src/app
+
+COPY package.json /usr/src/app
+
+COPY yarn.lock /usr/src/app
+
+ENV NODE_ENV=production
+
+RUN yarn add --dev typescript @types/node
+
+RUN yarn install --production
+
+COPY . /usr/src/app
 
 RUN yarn build
 
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+CMD [ "yarn", "start" ]
