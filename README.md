@@ -1,7 +1,7 @@
 # personal-website
 
 ![build with Typescript](https://img.shields.io/badge/Build%20with-Typescript-green)
-![build with React JS](https://img.shields.io/badge/Build%20with-React%20JS-green)
+![build with Next JS](https://img.shields.io/badge/Build%20with-Next%20JS-green)
 ![last commit](https://img.shields.io/github/last-commit/AnthoniMarie/personal-website)
 
 <!-- PROJECT LOGO -->
@@ -18,7 +18,7 @@
 </p>
 
 
-- **Language:** Typescript (backend) and React (frontend)
+- **Language:** Typescript (backend) and Next JS (frontend)
 
 # Introduction
 
@@ -28,7 +28,7 @@ I've had a website for 2018 now, they've all looked different and weren't necess
 •	Node.js (Strapi)<br>
 •	HTML<br>
 •	CSS<br>
-•	Javascript (React JS)<br>
+•	Javascript (Next JS)<br>
 
 # What do you need to start the project ?
 
@@ -41,4 +41,4 @@ I've had a website for 2018 now, they've all looked different and weren't necess
 
 # Start the project ! 🐳
 
-```docker-compose build && docker-compose up```
+```docker-compose up --build```
