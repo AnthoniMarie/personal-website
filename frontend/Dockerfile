@@ -1,19 +1,13 @@
-FROM node:16.2-alpine as build
+FROM node:16.2-alpine
 
 WORKDIR /app
 
 COPY . .
 
-RUN npm install
+RUN yarn install
 
-RUN npm run build
+RUN yarn build
 
-CMD ["ls", "-l"]
+EXPOSE 3000
 
-FROM nginx:stable-alpine
-
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-
-COPY --from=build /app/build /usr/share/nginx/html
-
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+CMD ["yarn", "start"]
