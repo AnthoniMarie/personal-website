@@ -76,9 +76,9 @@ export default function Landing() {
               <TypeAnimation
                 cursor={true}
                 sequence={[
-                  "Bring your projects to life",
+                  "Réalisez vos projets IT",
                   2000,
-                  "easily and efficiently.",
+                  "facilement et rapidement.",
                   2000,
                 ]}
                 wrapper="strong"
