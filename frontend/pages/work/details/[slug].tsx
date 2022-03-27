@@ -15,7 +15,7 @@ const Project = () => {
   useEffect(() => {
     if (!router.isReady) return;
     const { slug } = router.query;
-    fetch(API_URL + "/api/projects?filters[slug][$eq]=" + slug)
+    fetch(API_URL + "/projects?filters[slug][$eq]=" + slug)
       .then((response) => response.json())
       .then((data) => {
         setIsLoading(false);

@@ -9,7 +9,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 
-import { API_URL } from "../../../constants/misc";
+import { API_URL_ASSETS } from "../../../constants/misc";
 
 interface BlogAuthorProps {
   date: Date;
@@ -46,7 +46,7 @@ const Card = ({ data }) => {
                     style={{ aspectRatio: "3/2" }}
                     transform="scale(1.0)"
                     src={
-                      API_URL +
+                      API_URL_ASSETS +
                       item.attributes.banner.data.attributes.formats.large.url
                     }
                     alt={item.attributes.title}

@@ -20,7 +20,7 @@ const Blog = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   useEffect(() => {
-    fetch(API_URL + "/api/blogs?populate=*")
+    fetch(API_URL + "/blogs?populate=*")
       .then((response) => response.json())
       .then((data) => {
         setIsLoading(false);

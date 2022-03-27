@@ -19,7 +19,7 @@ const Projects = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   useEffect(() => {
-    fetch(API_URL + "/api/projects?populate=*")
+    fetch(API_URL + "/projects?populate=*")
       .then((response) => response.json())
       .then((data) => {
         setIsLoading(false);
