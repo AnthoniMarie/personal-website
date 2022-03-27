@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 
 import Meta from "../../seo/Meta";
-import { API_URL } from "../../../constants/misc";
+import { API_URL_ASSETS } from "../../../constants/misc";
 
 const ProjectContent = ({ data }) => {
   const seoData = {
@@ -44,7 +44,7 @@ const ProjectContent = ({ data }) => {
         <ReactMarkdown
           components={ChakraUIRenderer(customProject)}
           skipHtml
-          transformImageUri={(uri) => API_URL + uri}
+          transformImageUri={(uri) => API_URL_ASSETS + uri}
         >
           {data.content}
         </ReactMarkdown>

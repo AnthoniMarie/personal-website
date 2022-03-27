@@ -17,7 +17,7 @@ const Article = () => {
   useEffect(() => {
     if (!router.isReady) return;
     const { slug } = router.query;
-    fetch(API_URL + "/api/blogs?filters[slug][$eq]=" + slug)
+    fetch(API_URL + "/blogs?filters[slug][$eq]=" + slug)
       .then((response) => response.json())
       .then((data) => {
         setIsLoading(false);
