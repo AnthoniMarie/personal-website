@@ -49,7 +49,7 @@ function ContactModal() {
           message: formData.message,
         }),
       };
-      fetch(API_URL + "/api/mailing", requestOptions)
+      fetch(API_URL + "/mailing", requestOptions)
         .then((response) => response.json())
         .then((data) => {
           if (data.message == "Please fill all fields") {
