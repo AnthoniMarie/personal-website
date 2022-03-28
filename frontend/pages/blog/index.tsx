@@ -20,7 +20,7 @@ const Blog = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   useEffect(() => {
-    fetch(API_URL + "/blogs?populate=*")
+    http: fetch(API_URL + "/blogs?sort=publishedAt:DESC&?populate=*")
       .then((response) => response.json())
       .then((data) => {
         setIsLoading(false);
