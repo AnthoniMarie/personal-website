@@ -19,7 +19,7 @@ const Projects = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   useEffect(() => {
-    fetch(API_URL + "/projects?sort=publishedAt:DESC&?populate=*")
+    fetch(API_URL + "/projects?sort=publishedAt:DESC&populate=*")
       .then((response) => response.json())
       .then((data) => {
         setIsLoading(false);
