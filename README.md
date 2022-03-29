@@ -8,7 +8,7 @@
 <br />
 <p align="center">
   <a href="https://anthoni-marie.fr">
-    <img src="https://s.anthoni-marie.fr/m_w/2021/img/logo-black.png" alt="AnimatedLogo" width="80" height="80">
+    <img src="https://anthoni-marie.fr/static/images/anthonimarie.svg" width="80" height="80">
   </a>
 
 <h3 align="center">My personal website</h3>
