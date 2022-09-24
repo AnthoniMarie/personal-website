@@ -9,7 +9,7 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { FaInstagram, FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { SimpleLogo } from "../branding/SimpleLogo";
@@ -48,26 +48,48 @@ const SocialButton = ({
 };
 
 export default function Footer() {
+  const [lang, setLang] = useState("");
+  const contact_img = useColorModeValue(
+    "/static/images/contact/5_whitebg.png",
+    "/static/images/contact/5.png"
+  );
+  function getElementText(response, elementName) {
+    return response.getElementsByTagName(elementName)[0].innerHTML;
+  }
+
+  useEffect(() => {
+    fetch("http://api.hostip.info")
+      .then((res) => res.text())
+      .then((response) => {
+        return new window.DOMParser().parseFromString(response, "text/xml");
+      })
+      .then((responseXmlParsed) => {
+        let countryName = getElementText(responseXmlParsed, "countryName");
+        setLang(countryName);
+      })
+      .catch(() => {});
+  }, []);
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
       <Stack direction={"row"} spacing={6} justify={"center"} align={"center"}>
-        <Stack direction={"row"} marginTop="10">
-          <Image
-            src="https://api.codeur.com/widgets/badge.svg?k=v7oPAwyJHQjXqAz4"
-            alt={"Avis codeur.com de Anthoni Marie"}
-          />
-          <Image
-            src={useColorModeValue(
-              "/static/images/contact/5_whitebg.png",
-              "/static/images/contact/5.png"
-            )}
-            alt={"Appeler Anthoni Marie"}
-            onClick={() => (window.location.href = "tel:0766082188")}
-          />
-        </Stack>
+        {lang == "FRANCE" ? (
+          <Stack direction={"row"} marginTop="10">
+            <Image
+              src="https://api.codeur.com/widgets/badge.svg?k=v7oPAwyJHQjXqAz4"
+              alt={"Avis codeur.com de Anthoni Marie"}
+            />
+            <Image
+              src={contact_img}
+              alt={"Appeler Anthoni Marie"}
+              onClick={() => (window.location.href = "tel:0766082188")}
+            />
+          </Stack>
+        ) : (
+          ""
+        )}
       </Stack>
       <Stack direction={"row"} spacing={6} justify={"center"} align={"center"}>
         <Container
@@ -81,7 +103,7 @@ export default function Footer() {
           <SimpleLogo h="30" />
           <Text>L'informatique au service des autres.</Text>
           <Text fontSize={"xs"}>
-            99 Av. Achille Peretti, 92200 Neuilly-sur-Seine
+            99 Av. Achille Peretti, 92200 Neuilly-sur-Seine, France
           </Text>
         </Container>
       </Stack>

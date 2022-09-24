@@ -76,9 +76,17 @@ export default function Landing() {
               <TypeAnimation
                 cursor={true}
                 sequence={[
-                  "Réalisez vos projets IT",
+                  "Bienvenue sur mon blog !",
                   2000,
-                  "facilement et rapidement.",
+                  "Welcome on my blog !",
+                  2000,
+                  "Passionné par l'informatique.",
+                  2000,
+                  "IT lover.",
+                  2000,
+                  "IoT enthusiast.",
+                  2000,
+                  "Passionnate about cars.",
                   2000,
                 ]}
                 wrapper="strong"
@@ -91,10 +99,10 @@ export default function Landing() {
                 backgroundColor="#de8814"
                 variant="solid"
                 onClick={() => {
-                  router.push("/solutions");
+                  router.push("/about");
                 }}
               >
-                Découvrir
+                Découvrir mon blog !
               </Button>
             </Stack>
           </Stack>
