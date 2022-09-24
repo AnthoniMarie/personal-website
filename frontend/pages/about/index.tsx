@@ -22,13 +22,7 @@ import { ReactElement } from "react";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
 import { FiCode, FiHelpCircle, FiStar } from "react-icons/fi";
-import {
-  FcGlobe,
-  FcConferenceCall,
-  FcFolder,
-  FcGraduationCap,
-  FcFlashOn,
-} from "react-icons/fc";
+import { FcFlashOn } from "react-icons/fc";
 
 import Testimonials from "../../components/testimonials";
 import { SimpleLogo } from "../../components/branding/SimpleLogo";
@@ -137,26 +131,31 @@ export default function About() {
             </Text>
             <Heading>Développeur web et étudiant à Epitech</Heading>
             <Feature
-              icon={<Icon as={FiCode} color={"yellow.500"} w={5} h={5} />}
-              iconBg={useColorModeValue("yellow.100", "yellow.900")}
-              text={"Développement Fullstack"}
-            />
-            <Feature
               icon={<Icon as={FiHelpCircle} color={"green.500"} w={5} h={5} />}
               iconBg={useColorModeValue("green.100", "green.900")}
-              text={"Dépannage informatique"}
+              text={"Conseil informatique"}
             />
             <Feature
               icon={<Icon as={FiStar} color={"purple.500"} w={5} h={5} />}
               iconBg={useColorModeValue("purple.100", "purple.900")}
-              text={"Conseil informatique"}
+              text={"Spécialisé dans le développement web"}
+            />
+            <Feature
+              icon={<Icon as={FiCode} color={"yellow.500"} w={5} h={5} />}
+              iconBg={useColorModeValue("yellow.100", "yellow.900")}
+              text={"Développement Fullstack"}
             />
             <Text>
-              Je m'appelle Anthoni, j'ai actuellement 21 ans et je vis sur
-              Paris. Autodidacte passionné par le domaine de l'informatique et
-              du web depuis maintenant plus de 5 ans, je suis capable de
-              développer un site internet complet (dans la limitation de mes
-              connaissances) avec l'aide d'un cahier des charges.
+              Je m'appelle Anthoni, Bienvenue sur mon blog ou je parle de tout
+              et de rien et de mes projets ! Vous pourrez si vous le souhaitez,
+              entrer en contact avec moi via ce site.
+            </Text>
+            <Text>
+              J'ai actuellement 21 ans et je vis sur Paris. Autodidacte
+              passionné par le domaine de l'informatique et du web depuis
+              maintenant plus de 5 ans, je suis capable de développer un site
+              internet complet (dans la limitation de mes connaissances) avec
+              l'aide d'un cahier des charges.
             </Text>
             <Text>
               Pour me perfectionner dans le domaine je participe à l'élaboration
@@ -193,38 +192,6 @@ export default function About() {
             />
           </Flex>
         </SimpleGrid>
-        <Box maxW="7xl" mx={"auto"} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
-          <chakra.h1
-            textAlign={"center"}
-            fontSize={"4xl"}
-            py={7}
-            fontWeight={"bold"}
-          >
-            Quelques chiffres
-          </chakra.h1>
-          <SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 5, lg: 8 }}>
-            <StatsCard
-              title={"Projets"}
-              stat={"+50"}
-              icon={<FcFolder size={"3em"} />}
-            />
-            <StatsCard
-              title={"Clients"}
-              stat={"+20"}
-              icon={<FcConferenceCall size={"3em"} />}
-            />
-            <StatsCard
-              title={"Avis"}
-              stat={"+10"}
-              icon={<FcGlobe size={"3em"} />}
-            />
-            <StatsCard
-              title={"Axes de travail"}
-              stat={"+5"}
-              icon={<FcGraduationCap size={"3em"} />}
-            />
-          </SimpleGrid>
-        </Box>
         <Box maxW="7xl" mx={"auto"} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
           <chakra.h1
             textAlign={"center"}

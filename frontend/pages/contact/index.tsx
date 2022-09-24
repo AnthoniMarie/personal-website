@@ -2,7 +2,6 @@ import * as React from "react";
 import {
   Container,
   Box,
-  Heading,
   Text,
   Button,
   Stack,
@@ -15,8 +14,8 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { TimeIcon, PhoneIcon } from "@chakra-ui/icons";
-import { FcCurrencyExchange, FcCursor, FcFlashOn } from "react-icons/fc";
+import { PhoneIcon } from "@chakra-ui/icons";
+import { FcCursor } from "react-icons/fc";
 
 import { SimpleLogo } from "../../components/branding/SimpleLogo";
 import ContactModal from "../../components/contact/Modal";
@@ -77,11 +76,8 @@ export default function Contact() {
             <GridItem colSpan={1}>
               <VStack alignItems="flex-start" spacing="20px" marginTop="5">
                 <chakra.h2 fontSize="3xl" fontWeight="700">
-                  Voyez les choses en grand.
+                  Entrons en contact.
                 </chakra.h2>
-                <chakra.p>
-                  Parce que réaliser un projet n'est pas une mince affaire...
-                </chakra.p>
                 <Button
                   bg={"#de8814"}
                   _hover={{ bg: "#ff9100" }}
@@ -110,11 +106,9 @@ export default function Contact() {
           style={{ textAlign: "center" }}
           id={"getintouch"}
         >
-          <Heading style={{ textTransform: "uppercase" }}>
-            Entrons en liaison
-          </Heading>
           <chakra.p marginTop="10">
-            Parce que réaliser un projet n'est pas une mince affaire...
+            N'hésitez pas à me contacter pour toute demande de renseignement
+            concernant mes études ou mes compétences.
           </chakra.p>
           <Box p={4}>
             <Box
@@ -125,31 +119,14 @@ export default function Contact() {
               px={{ base: "6", md: "8" }}
             >
               <SimpleGrid
-                columns={{ base: 1, md: 3 }}
+                columns={{ base: 1, md: 1 }}
                 spacingX="10"
                 spacingY={{ base: "8", md: "14" }}
               >
-                <Feature
-                  title="Votre devis est gratuit"
-                  icon={<FcCurrencyExchange />}
-                >
-                  Pour votre projet, la production du devis est entièrement
-                  gratuite et sans engagement. Ainsi, vous savez à quoi vous
-                  attendre.
-                </Feature>
-                <Feature
-                  title="Planifiez notre rendez-vous"
-                  icon={<FcCursor />}
-                >
+                <Feature title="Une réponse rapide !" icon={<FcCursor />}>
                   Vous avez un emploi du temps très chargé et vous voulez que
-                  cela aille vite ? Aucun souci, planifiez vous même directement
-                  en ligne notre rendez-vous téléphonique, simplement,
-                  facilement et rapidement.
-                </Feature>
-                <Feature title="N'attendez pas" icon={<FcFlashOn />}>
-                  Parce que je sais que développer son projet demande d'être
-                  rapide et engage beaucoup d'angoisse, je vous propose un temps
-                  de réponse dans les plus brefs délais et pratique.
+                  cela aille vite ? Dès réception de votre demande, une réponse
+                  vous sera apportée au maximum dans les 24H.
                 </Feature>
               </SimpleGrid>
             </Box>
@@ -163,7 +140,7 @@ export default function Contact() {
               px={{ base: "6", md: "8" }}
             >
               <SimpleGrid
-                columns={{ base: 1, md: 3 }}
+                columns={{ base: 1, md: 2 }}
                 spacingX="5"
                 spacingY={{ base: "4", md: "12" }}
               >
@@ -176,7 +153,7 @@ export default function Contact() {
                 >
                   M'appeler
                 </Button>
-                <Button
+                {/*<Button
                   leftIcon={<TimeIcon />}
                   backgroundColor="#6e695e"
                   variant="solid"
@@ -185,7 +162,7 @@ export default function Contact() {
                   }}
                 >
                   Planifier un rendez-vous
-                </Button>
+                </Button>*/}
               </SimpleGrid>
             </Box>
           </Box>
