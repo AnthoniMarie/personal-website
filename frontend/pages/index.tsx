@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 
 import Granim from "granim";
 import { Search2Icon } from "@chakra-ui/icons";
-import TypeAnimation from "react-type-animation";
+import Typed from "react-typed";
 
 import { SimpleLogo } from "../components/branding/SimpleLogo";
 import Meta from "../components/seo/Meta";
@@ -43,6 +43,7 @@ export default function Landing() {
       },
     });
   }, []);
+  // @ts-ignore
   return (
     <>
       <Meta data={seoData} />
@@ -73,7 +74,20 @@ export default function Landing() {
               lineHeight={1.2}
               fontSize={useBreakpointValue({ base: "4xl", md: "5xl" })}
             >
-              <TypeAnimation
+              <Typed
+                strings={[
+                  "Bienvenue sur mon blog ! 👨‍💻",
+                  "Welcome on my blog ! 👨‍💻",
+                  "Passionné par l'informatique. 🖥️",
+                  "IT lover. 🖥️",
+                  "IoT enthusiast. 🌐",
+                  "Passionnate about cars. 🚗",
+                ]}
+                typeSpeed={10}
+                backSpeed={20}
+                loop
+              />
+              {/*<TypeAnimation
                 cursor={true}
                 sequence={[
                   "Bienvenue sur mon blog !",
@@ -91,7 +105,7 @@ export default function Landing() {
                 ]}
                 wrapper="strong"
                 repeat={Infinity}
-              />
+              />*/}
             </Text>
             <Stack align={"center"} alignSelf={"center"} position={"relative"}>
               <Button
