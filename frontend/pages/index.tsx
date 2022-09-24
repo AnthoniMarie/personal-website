@@ -87,25 +87,6 @@ export default function Landing() {
                 backSpeed={20}
                 loop
               />
-              {/*<TypeAnimation
-                cursor={true}
-                sequence={[
-                  "Bienvenue sur mon blog !",
-                  2000,
-                  "Welcome on my blog !",
-                  2000,
-                  "Passionné par l'informatique.",
-                  2000,
-                  "IT lover.",
-                  2000,
-                  "IoT enthusiast.",
-                  2000,
-                  "Passionnate about cars.",
-                  2000,
-                ]}
-                wrapper="strong"
-                repeat={Infinity}
-              />*/}
             </Text>
             <Stack align={"center"} alignSelf={"center"} position={"relative"}>
               <Button
