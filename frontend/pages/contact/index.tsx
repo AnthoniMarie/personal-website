@@ -14,7 +14,6 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { PhoneIcon } from "@chakra-ui/icons";
 import { FcCursor } from "react-icons/fc";
 
 import { SimpleLogo } from "../../components/branding/SimpleLogo";
@@ -140,19 +139,11 @@ export default function Contact() {
               px={{ base: "6", md: "8" }}
             >
               <SimpleGrid
-                columns={{ base: 1, md: 2 }}
+                columns={{ base: 1, md: 1 }}
                 spacingX="5"
                 spacingY={{ base: "4", md: "12" }}
               >
                 <ContactModal />
-                <Button
-                  leftIcon={<PhoneIcon />}
-                  backgroundColor="#de8814"
-                  variant="solid"
-                  onClick={() => (window.location.href = "tel:0766082188")}
-                >
-                  M'appeler
-                </Button>
                 {/*<Button
                   leftIcon={<TimeIcon />}
                   backgroundColor="#6e695e"
