@@ -149,7 +149,7 @@ export default function About() {
               entrer en contact avec moi via ce site.
             </Text>
             <Text>
-              J'ai actuellement 21 ans et je vis sur Paris. Autodidacte
+              J'ai actuellement 22 ans et je vis sur Paris. Autodidacte
               passionné par le domaine de l'informatique et du web depuis
               maintenant plus de 5 ans, je suis capable de développer un site
               internet complet (dans la limitation de mes connaissances) avec

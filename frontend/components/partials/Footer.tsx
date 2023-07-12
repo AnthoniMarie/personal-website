@@ -65,11 +65,6 @@ export default function Footer() {
             src="https://api.codeur.com/widgets/badge.svg?k=v7oPAwyJHQjXqAz4"
             alt={"Avis codeur.com de Anthoni Marie"}
           />
-          {/*<Image
-            src={contact_img}
-            alt={"Appeler Anthoni Marie"}
-            onClick={() => (window.location.href = "tel:0766082188")}
-          />*/}
         </Stack>
       </Stack>
       <Stack direction={"row"} spacing={6} justify={"center"} align={"center"}>
@@ -102,7 +97,7 @@ export default function Footer() {
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          <Text>© 2022 Anthoni Marie. All rights reserved.</Text>
+          <Text>© 2023 Anthoni Marie. All rights reserved.</Text>
           <Text fontSize="xs">Made with 🚀 with Chakra UI.</Text>
           <Stack direction={"row"} spacing={6}>
             <SocialButton
