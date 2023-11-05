@@ -61,7 +61,7 @@ export default function Contact() {
           p={{ sm: 5, md: 5, lg: 16 }}
           alignItems="center"
           justifyContent="center"
-          backgroundImage="/static/images/contact/banner.jpg"
+          backgroundImage="/static/images/contact/banner_la.jpg"
           backgroundSize={"cover"}
           backgroundPosition={"center center"}
           templateColumns={{

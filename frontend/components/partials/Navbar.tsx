@@ -314,6 +314,17 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
+    label: "VOYAGES",
+    href: "#",
+    children: [
+      {
+        label: "Mes voyages",
+        subLabel: "Liste de tous mes voyages depuis 2022 avec conseils et photos",
+        href: "https://anthonimarie.notion.site/Voyages-a8b7acfe12884b7fb3eaef1becac2460?pvs=4",
+      },
+    ],
+  },
+  {
     label: "BLOG",
     href: "/blog",
   },
