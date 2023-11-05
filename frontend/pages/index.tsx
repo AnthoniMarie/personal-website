@@ -82,6 +82,7 @@ export default function Landing() {
                   "IT lover. 🖥️",
                   "IoT enthusiast. 🌐",
                   "Passionnate about cars. 🚗",
+                  "Picture lover. 📷",
                 ]}
                 typeSpeed={10}
                 backSpeed={20}
